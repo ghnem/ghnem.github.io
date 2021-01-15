@@ -1,40 +1,122 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+	<title>FFT</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/moon.css" id="theme">
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides" data-background-color="aquamarine">
+			<section data-auto-animate>
+				<pre data-id="code-animation"><code data-trim data-line-numbers>
+				  let planets = [
+					{ name: 'mars', diameter: 6779 },
+				  ]
+				</code></pre>
+			</section>
+			<section data-auto-animate>
+				<pre data-id="code-animation"><code data-trim data-line-numbers>
+				  let planets = [
+					{ name: 'mars', diameter: 6779 },
+					{ name: 'earth', diameter: 12742 },
+					{ name: 'jupiter', diameter: 139820 }
+				  ]
+				</code></pre>
+			</section>
+			<section data-auto-animate>
+				<pre data-id="code-animation"><code data-trim data-line-numbers>
+				  let circumferenceReducer = ( c, planet ) => {
+					return c + planet.diameter * Math.PI;
+				  }
+			  
+				  let planets = [
+					{ name: 'mars', diameter: 6779 },
+					{ name: 'earth', diameter: 12742 },
+					{ name: 'jupiter', diameter: 139820 }
+				  ]
+			  
+				  let c = planets.reduce( circumferenceReducer, 0 )
+				</code></pre>
+			</section>
+			<section r-fit-text>
+				<h1>FFT</h1>
+			</section>
+			<section data-auto-animate>
+				<ul>
+					<li>History</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<ul>
+					<li>History</li>
+					<li>Definition</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<ul>
+					<li>History</li>
+					<li>Definition</li>
+					<li>Implmentation</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<ul>
+					<li>History</li>
+					<li>Definition</li>
+					<li>Implmentation</li>
+					<li>Applications</li>
+				</ul>
+			</section>
+			<section dat>
+				<h2>The Lorenz Equations</h2>
+				\[\begin{aligned}
+				\dot{x} &amp; = \sigma(y-x) \\
+				\dot{y} &amp; = \rho x - y - xz \\
+				\dot{z} &amp; = -\beta z + xy
+				\end{aligned} \]
+			</section>
+			<section data-markdown="example.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"
+				data-separator-notes="^Note:" data-charset="iso-8859-15">
+			</section>
+			<section>
+				<iframe width="1120" height="630" src="https://www.youtube.com/embed/iX_hTQSYk-Y?start=308"
+					frameborder="0"
+					allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" /></iframe>
+			</section>
+			<section>Slide 1</section>
+			<section>Slide 2</section>
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		Reveal.initialize({
+			controls: false,
+			hash: true,
+			autoPlayMedia: true,
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+			},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+		});
+	</script>
+</body>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
 </html>
