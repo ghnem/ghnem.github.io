@@ -45,7 +45,7 @@
 				<h2>Plan</h2>
 				<ul>
 					<li class="fragment">Motivation</li>
-					<li class="fragment">Brief Definition</li>
+					<li class="fragment">Preliminaries</li>
 					<li class="fragment" style="color: bisque;">History</li>
 					<li class="fragment">Definition</li>
 					<li class="fragment">Implmentation</li>
@@ -85,14 +85,117 @@
 				<h3>Phase-locked Loop</h3>
 				<img data-src="static/fpga.jpg">
 			</section>
+			<section data-auto-animate r-fit-text>
+				<h3>Just imagine a world without DFT</h3>
+			</section>
+			<section data-auto-animate r-fit-text>
+				<h3>Just imagine a world without <strike style="color: red;">DFT</strike> The whole Fourier family</h3>
+			</section>
+			<section data-auto-animate>
+				<img data-src="static/meme.jpg">
+			</section>
 			<section>
 				You're motivated now, aren't you? 🎉
 			</section>
 			<section>
-				<q>A basic rule of mathematical life: if the universe hands you a hard problem, try to solve an easier
-					one instead, and hope the simple version is close enough to the original problem that the universe
+				<h2>Preliminaries</h2>
+			</section>
+			<section>
+				<h3>Why do we need FFT?</h3>
+				<p class="fragment">A fast alorithms to calculate the DFT</p>
+			</section>
+			<section>
+				<p>When we talk about algorithm performance</p>
+				<p>The metric is the <span style="color: bisque;">Ο</span> notaion</p>
+			</section>
+			<section>
+				<h3>The big Ο Notation</h3>
+				<p class="fragment" data-fragment-index="2">The size(N) response of the algorithm</p>
+				<p class="fragment" data-fragment-index="1">The scalability of the algorithm</p>
+				<p class="fragment" data-fragment-index="1">Just an abstarct benchmark to determine which algorithm is
+					better </p>
+			</section>
+			<section data-auto-animate>
+				<h4>Scalability</h4>
+				<h5 class="fragment">All computer problems are either</h5>
+				<ul>
+					<li class="fragment">CPU bound</li>
+					<li class="fragment">memeory bound</li>
+					<li class="fragment">IO bound</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h4>Scalability</h4>
+				<h5>All computer problems are either</h5>
+				<ul>
+					<li style="color: bisque;">CPU bound -> time complexity</li>
+					<li style="color: bisque;">memeory bound -> sapce complexity</li>
+					<li>IO bound</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h4>What units? 😕</h4>
+				<h5>All computer problems are either</h5>
+				<ul>
+					<li style="color: bisque;">CPU bound -> years</li>
+					<li style="color: bisque;">memeory bound -> Kg</li>
+					<li>IO bound</li>
+				</ul>
+			</section>
+			<section>
+				<h4>different Complexities</h4>
+				<img data-src="static/complexity.png">
+			</section>
+			<section>
+				<h3>Assumptions about the abstrat machine</h3>
+				<ul>
+					<li class="fragment">Single-threaded</li>
+					<li class="fragment">All ALU operations takes constatnt time(but might differ for different
+						operations)</li>
+					<li class="fragment">Its word length is big enough(yet limited) to address all the memory locations
+						used to represent
+						our
+						problem, plus an extra percentage for our variables.</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Simple evaluation Technique</h3>
+				<img data-src="static/big-oh.png">
+			</section>
+			<section>
+				<h3>Formal Evaluatoin Technique</h3>
+				<p>Usually through recurrence relations</p>
+				<img data-src="static/concrete.jpeg">
+			</section>
+			<section>
+				<q>Fancy algorithms are slow when n is small, and n is usually small</q>
+				<span style=" display: block; color: bisque;">- Rob Pike</i>
+			</section>
+			<section>
+				<h3>FFT is one of those fancy algorithms</h3>
+				<ul>
+					<li class="fragment">The time complexity for calculating the DFT is \[Ο({n^{2}})\]</li>
+					<li class="fragment">But the the some of FFT magic it becomes \[Ο({n\log{n}})\]</li>
+				</ul>
+			</section>
+			<section>
+				<h4 class="fragment" data-fragment-index="2">aka, Divide & Conquer</h4>
+				<q>A basic rule of mathematical life: if the universe hands you a hard problem, try to solve an
+					easier
+					one instead, and hope the simple version is close enough to the original problem that the
+					universe
 					doesn’t object.</q>
-				<span style="display: block; color: bisque;">- Jordan Ellenberg, How Not To Be Wrong</i>
+				<span style=" display: block; color: bisque;">- Jordan Ellenberg, How Not To Be Wrong</i>
+			</section>
+			<section data-background-color="rgb(70, 70, 255)" data-auto-animate>
+				<h4>Bonus</h4>
+				<p style="color: black;" class="fragment">Have you ever heard of dynamic programming?</p>
+				<p style="color: black;" class="fragment">Yes, that mathematical technique which has nothing to with
+					programming and it's not that dynamic</p>
+			</section>
+			<section data-background-color="rgb(70, 70, 255)" data-auto-animate>
+				<h4>Bonus</h4>
+				<p style="color: black;">Dynamic progamming is a superset of divide & conquer</p>
 			</section>
 			<section>
 				<h3>بس خلاص</h3>
@@ -106,8 +209,8 @@
 				\dot{z} &amp; = -\beta z + xy
 				\end{aligned} \]
 			</section>
-			<section data-markdown="example.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"
-				data-separator-notes="^Note:" data-charset="iso-8859-15">
+			<section data-markdown=" example.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:" data-charset="iso-8859-15">
 			</section>
 			<section>
 				<iframe width="1120" height="630" src="https://www.youtube.com/embed/iX_hTQSYk-Y?start=308"
