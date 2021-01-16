@@ -45,11 +45,54 @@
 				<h2>Plan</h2>
 				<ul>
 					<li class="fragment">Motivation</li>
-					<li class="fragment">History</li>
+					<li class="fragment">Brief Definition</li>
+					<li class="fragment" style="color: bisque;">History</li>
 					<li class="fragment">Definition</li>
 					<li class="fragment">Implmentation</li>
 					<li class="fragment">Applications</li>
 				</ul>
+			</section>
+			<section>
+				<h2>Motivation</h2>
+			</section>
+			<section data-auto-animate>
+				<h3>Why do we need FFT?</h3>
+				<p class="fragment">A fast alorithms to calculate the DFT</p>
+			</section>
+			<section data-auto-animate>
+				<h3>Why do we need to calculate the DFT?</h3>
+			</section>
+			<section>
+				<ul>
+					<li class="fragment" data-fragment-index="4" style="margin-left: -40px;">Control Theory</li>
+					<li class="fragment" data-fragment-index="3" style="margin-left: -20px;">DSP</li>
+					<li class="fragment" data-fragment-index="1">Convolution</li>
+					<li class="fragment" style="margin-left: 20px;" data-fragment-index="2">CV</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h3>PLL</h3>
+			</section>
+			<section data-auto-animate>
+				<h3>PLL</h3>
+				<h4>Phase-locked Loop</h4>
+			</section>
+			<section data-auto-animate>
+				<h3>Phase-locked Loop</h3>
+				<img data-src="static/pll.png">
+			</section>
+			<section data-auto-animate>
+				<h3>Phase-locked Loop</h3>
+				<img data-src="static/fpga.jpg">
+			</section>
+			<section>
+				You're motivated now, aren't you? 🎉
+			</section>
+			<section>
+				<q>A basic rule of mathematical life: if the universe hands you a hard problem, try to solve an easier
+					one instead, and hope the simple version is close enough to the original problem that the universe
+					doesn’t object.</q>
+				<span style="display: block; color: bisque;">- Jordan Ellenberg, How Not To Be Wrong</i>
 			</section>
 			<section>
 				<h3>بس خلاص</h3>
@@ -81,6 +124,7 @@
 	<script src="plugin/markdown/markdown.js"></script>
 	<script src="plugin/highlight/highlight.js"></script>
 	<script src="plugin/math/math.js"></script>
+	<script src="plugin/zoom/zoom.js"></script>
 	<script>
 		Reveal.initialize({
 			controls: false,
@@ -93,7 +137,7 @@
 				TeX: { Macros: { RR: "{\\bf R}" } }
 			},
 			// Learn about plugins: https://revealjs.com/plugins/
-			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath, RevealZoom]
 		});
 	</script>
 </body>
