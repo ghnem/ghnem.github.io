@@ -34,22 +34,24 @@
 				<img data-src="static/youtube.png">
 			</section>
 			<section data-auto-animate>
-				<h3>I have <span style="color: red;">nothing</span> to add 🤷‍♂️</h3>
-			</section>
-			<section data-transition="none">
-				<h3>I have <strike style="color: red;">nothing</strike> <span style="color: green;">something</span> to
-					add 🚀
-				</h3>
+				<h3>Two problems</h3>
+				<img data-src="static/theory.png">
 			</section>
 			<section data-auto-animate>
-				<h2>Plan</h2>
+				<h3>Two problems</h3>
+				<p>Chances that you're going to implement FFT yourself one day is pretty low.</p>
+			</section>
+			</section>
+			<section data-auto-animate>
+				<h2>Series Timeline</h2>
 				<ul>
 					<li class="fragment">Motivation</li>
-					<li class="fragment">Preliminaries</li>
+					<li class="fragment">Prerequisites</li>
 					<li class="fragment" style="color: bisque;">History</li>
-					<li class="fragment">Definition</li>
+					<li class="fragment">Deep Dive</li>
 					<li class="fragment">Implmentation</li>
-					<li class="fragment">Applications</li>
+					<li class="fragment">Variants</li>
+					<li class="fragment">Application</li>
 				</ul>
 			</section>
 			<section>
@@ -57,7 +59,7 @@
 			</section>
 			<section data-auto-animate>
 				<h3>Why do we need FFT?</h3>
-				<p class="fragment">A fast alorithms to calculate the DFT</p>
+				<p class="fragment">A fast algorithm to calculate the DFT</p>
 			</section>
 			<section data-auto-animate>
 				<h3>Why do we need to calculate the DFT?</h3>
@@ -98,11 +100,11 @@
 				You're motivated now, aren't you? 🎉
 			</section>
 			<section>
-				<h2>Preliminaries</h2>
+				<h2>Prerequisites</h2>
 			</section>
 			<section>
 				<h3>Why do we need FFT?</h3>
-				<p class="fragment">A fast alorithms to calculate the DFT</p>
+				<p class="fragment">A fast algorithm to calculate the DFT</p>
 			</section>
 			<section>
 				<p>When we talk about algorithm performance</p>
@@ -110,18 +112,20 @@
 			</section>
 			<section>
 				<h3>The big Ο Notation</h3>
-				<p class="fragment" data-fragment-index="2">The size(N) response of the algorithm</p>
-				<p class="fragment" data-fragment-index="1">The scalability of the algorithm</p>
+				<p class="fragment" data-fragment-index="2">The "size(N)" response of the algorithm</p>
+				<p class="fragment" data-fragment-index="1"></p>
 				<p class="fragment" data-fragment-index="1">Just an abstarct benchmark to determine which algorithm is
-					better </p>
+					better depending on the scalability of the algorithm</p>
 			</section>
 			<section data-auto-animate>
 				<h4>Scalability</h4>
-				<h5 class="fragment">All computer problems are either</h5>
+				<h5 class="fragment" data-fragment-index="1">All computer problems are either</h5>
 				<ul>
-					<li class="fragment">CPU bound</li>
-					<li class="fragment">memeory bound</li>
-					<li class="fragment">IO bound</li>
+					<li class="fragment" data-fragment-index="2">CPU bound</li>
+					<li class="fragment" data-fragment-index="3">memeory bound</li>
+					<li style="margin: 30px;" class="fragment">space</li>
+					<li style="margin: 30px;" class="fragment">latency</li>
+					<li class="fragment" data-fragment-index="4">IO bound</li>
 				</ul>
 			</section>
 			<section data-auto-animate>
@@ -129,7 +133,7 @@
 				<h5>All computer problems are either</h5>
 				<ul>
 					<li style="color: bisque;">CPU bound -> time complexity</li>
-					<li style="color: bisque;">memeory bound -> sapce complexity</li>
+					<li style="color: bisque;">memeory bound -> space complexity</li>
 					<li>IO bound</li>
 				</ul>
 			</section>
@@ -137,17 +141,17 @@
 				<h4>What units? 😕</h4>
 				<h5>All computer problems are either</h5>
 				<ul>
-					<li style="color: bisque;">CPU bound -> years</li>
-					<li style="color: bisque;">memeory bound -> Kg</li>
+					<li style="color: bisque;">time complexity -> years</li>
+					<li style="color: bisque;">space complexity -> Kg</li>
 					<li>IO bound</li>
 				</ul>
 			</section>
 			<section>
-				<h4>different Complexities</h4>
+				<h4>Examples</h4>
 				<img data-src="static/complexity.png">
 			</section>
-			<section>
-				<h3>Assumptions about the abstrat machine</h3>
+			<!-- <section>
+				<h3>Assumptions about the abstrcat machine</h3>
 				<ul>
 					<li class="fragment">Single-threaded</li>
 					<li class="fragment">All ALU operations takes constatnt time(but might differ for different
@@ -170,9 +174,9 @@
 			<section>
 				<q>Fancy algorithms are slow when n is small, and n is usually small</q>
 				<span style=" display: block; color: bisque;">- Rob Pike</i>
-			</section>
+			</section> -->
 			<section>
-				<h3>FFT is one of those fancy algorithms</h3>
+				<h3>Back to the FFT</h3>
 				<ul>
 					<li class="fragment">The time complexity for calculating the DFT is \[Ο({n^{2}})\]</li>
 					<li class="fragment">But the the some of FFT magic it becomes \[Ο({n\log{n}})\]</li>
@@ -187,15 +191,8 @@
 					doesn’t object.</q>
 				<span style=" display: block; color: bisque;">- Jordan Ellenberg, How Not To Be Wrong</i>
 			</section>
-			<section data-background-color="rgb(70, 70, 255)" data-auto-animate>
-				<h4>Bonus</h4>
-				<p style="color: black;" class="fragment">Have you ever heard of dynamic programming?</p>
-				<p style="color: black;" class="fragment">Yes, that mathematical technique which has nothing to with
-					programming and it's not that dynamic</p>
-			</section>
-			<section data-background-color="rgb(70, 70, 255)" data-auto-animate>
-				<h4>Bonus</h4>
-				<p style="color: black;">Dynamic progamming is a superset of divide & conquer</p>
+			<section>
+				<div class="fig-container" data-file="merge.html"></div>
 			</section>
 			<section>
 				<h2>History</h2>
@@ -225,8 +222,15 @@
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen></iframe>
 			</section>
+			<section data-auto-animate>
+				<h2>Next time</h2>
+				<ul>
+					<li>Deep Dive</li>
+					<li>Implmentation</li>
+				</ul>
+			</section>
 			<section>
-				<h3>بس خلاص</h3>
+				bye 👋
 			</section>
 		</div>
 	</div>
@@ -242,6 +246,10 @@
 			controls: false,
 			hash: true,
 			autoPlayMedia: true,
+			dependencies: [
+				{ src: 'node_modules/reveald3/reveald3.js' }
+			],
+
 			math: {
 				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
 				config: 'TeX-AMS_HTML-full',
