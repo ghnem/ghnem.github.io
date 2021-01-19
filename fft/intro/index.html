@@ -16,6 +16,11 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
+			<section>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/LS2qIpvZLFI" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
+			</section>
 			<section r-fit-text>
 				<h1>FFT</h1>
 			</section>
@@ -150,31 +155,6 @@
 				<h4>Examples</h4>
 				<img data-src="static/complexity.png">
 			</section>
-			<!-- <section>
-				<h3>Assumptions about the abstrcat machine</h3>
-				<ul>
-					<li class="fragment">Single-threaded</li>
-					<li class="fragment">All ALU operations takes constatnt time(but might differ for different
-						operations)</li>
-					<li class="fragment">Its word length is big enough(yet limited) to address all the memory locations
-						used to represent
-						our
-						problem, plus an extra percentage for our variables.</li>
-				</ul>
-			</section>
-			<section>
-				<h3>Simple evaluation Technique</h3>
-				<img data-src="static/big-oh.png">
-			</section>
-			<section>
-				<h3>Formal Evaluatoin Technique</h3>
-				<p>Usually through recurrence relations</p>
-				<img data-src="static/concrete.jpeg">
-			</section>
-			<section>
-				<q>Fancy algorithms are slow when n is small, and n is usually small</q>
-				<span style=" display: block; color: bisque;">- Rob Pike</i>
-			</section> -->
 			<section>
 				<h3>Back to the FFT</h3>
 				<ul>
@@ -243,7 +223,9 @@
 	<script src="plugin/zoom/zoom.js"></script>
 	<script>
 		Reveal.initialize({
-			controls: false,
+			controls: true,
+			controls: true,
+			controlsTutorial: true,
 			hash: true,
 			autoPlayMedia: true,
 			dependencies: [
@@ -253,10 +235,8 @@
 			math: {
 				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
 				config: 'TeX-AMS_HTML-full',
-				// pass other options into `MathJax.Hub.Config()`
 				TeX: { Macros: { RR: "{\\bf R}" } }
 			},
-			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath, RevealZoom]
 		});
 	</script>
