@@ -1,9 +1,11 @@
 <script lang="ts">
 	import Footer from '../components/Footer.svelte';
+    import Days from '../components/Days.svelte';
 </script>
 
 <main>
 	<h1>X Until Graduation</h1>
+    <Days />
 </main>
 <Footer />
 
