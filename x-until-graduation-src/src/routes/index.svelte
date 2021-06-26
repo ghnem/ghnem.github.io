@@ -1,2 +1,19 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import Footer from '../components/Footer.svelte';
+</script>
+
+<main>
+	<h1>X Until Graduation</h1>
+</main>
+<Footer />
+
+<style>
+    main {
+        max-width: 800px;
+        margin: auto;
+        min-height: 100vh;
+    }
+    h1 {
+        color: #4facfe;
+    }
+</style>
