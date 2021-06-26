@@ -15,7 +15,7 @@ const config = {
 			fallback: null,
 		}),
 		paths: {
-			base: '/x-until-graduation-src/build'
+			base: '/x-until-graduation/build'
 		},
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
