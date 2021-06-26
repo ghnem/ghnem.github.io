@@ -18,4 +18,11 @@
 		text-align: center;
 		background-color: rgba(228, 255, 229, 0.5);
 	}
+	a {
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
 </style>
