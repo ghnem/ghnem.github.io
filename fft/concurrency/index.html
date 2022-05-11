@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>FFT</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/moon.css" id="theme">
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/LS2qIpvZLFI" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
+			</section>
+			<section r-fit-text>
+				<h1>FFT</h1>
+			</section>
+			<section data-transition="zoom" data-transition-speed="fast">
+				<h2>Fast Fourier Transform</h3>
+			</section>
+			<section data-auto-animate>
+				<img data-src="static/google-it.png">
+			</section>
+			<section data-auto-animate>
+				<h3>I have nothing to add 🤷‍♂️</h3>
+				<img data-src="static/google-it.png">
+			</section>
+			<section data-auto-animate>
+				<h3>I have <span style="color: red;">nothing</span> to add 🤷‍♂️</h3>
+				<img data-src="static/youtube.png">
+			</section>
+			<section data-auto-animate>
+				<h3>Two problems</h3>
+				<img data-src="static/theory.png">
+			</section>
+			<section data-auto-animate>
+				<h3>Two problems</h3>
+				<p>Chances that you're going to implement FFT yourself one day is pretty low.</p>
+			</section>
+			</section>
+			<section data-auto-animate>
+				<h2>Series Timeline</h2>
+				<ul>
+					<li class="fragment">Motivation</li>
+					<li class="fragment">Prerequisites</li>
+					<li class="fragment" style="color: bisque;">History</li>
+					<li class="fragment">Deep Dive</li>
+					<li class="fragment">Implementation</li>
+					<li class="fragment">Variants</li>
+					<li class="fragment">Application</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Motivation</h2>
+			</section>
+			<section data-auto-animate>
+				<h3>Why do we need FFT?</h3>
+				<p class="fragment">A fast algorithm to calculate the DFT</p>
+			</section>
+			<section data-auto-animate>
+				<h3>Why do we need to calculate the DFT?</h3>
+			</section>
+			<section>
+				<ul>
+					<li class="fragment" data-fragment-index="4" style="margin-left: -40px;">Control Theory</li>
+					<li class="fragment" data-fragment-index="3" style="margin-left: -20px;">DSP</li>
+					<li class="fragment" data-fragment-index="1">Convolution</li>
+					<li class="fragment" style="margin-left: 20px;" data-fragment-index="2">CV</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h3>PLL</h3>
+			</section>
+			<section data-auto-animate>
+				<h3>PLL</h3>
+				<h4>Phase-locked Loop</h4>
+			</section>
+			<section data-auto-animate>
+				<h3>Phase-locked Loop</h3>
+				<img data-src="static/pll.png">
+			</section>
+			<section data-auto-animate>
+				<h3>Phase-locked Loop</h3>
+				<img data-src="static/fpga.jpg">
+			</section>
+			<section data-auto-animate r-fit-text>
+				<h3>Just imagine a world without DFT</h3>
+			</section>
+			<section data-auto-animate r-fit-text>
+				<h3>Just imagine a world without <strike style="color: red;">DFT</strike> The whole Fourier family</h3>
+			</section>
+			<section data-auto-animate>
+				<img data-src="static/meme.jpg">
+			</section>
+			<section>
+				You're motivated now, aren't you? 🎉
+			</section>
+			<section>
+				<h2>Prerequisites</h2>
+			</section>
+			<section>
+				<h3>Why do we need FFT?</h3>
+				<p class="fragment">A fast algorithm to calculate the DFT</p>
+			</section>
+			<section>
+				<p>When we talk about algorithm performance</p>
+				<p>The metric is the <span style="color: bisque;">Ο</span> notation</p>
+			</section>
+			<section>
+				<h3>The big Ο Notation</h3>
+				<p class="fragment" data-fragment-index="2">The "size(N)" response of the algorithm</p>
+				<p class="fragment" data-fragment-index="1"></p>
+				<p class="fragment" data-fragment-index="1">Just an abstract benchmark to determine which algorithm is
+					better depending on the scalability of the algorithm</p>
+			</section>
+			<section data-auto-animate>
+				<h4>Scalability</h4>
+				<h5 class="fragment" data-fragment-index="1">All computer problems are either</h5>
+				<ul>
+					<li class="fragment" data-fragment-index="2">CPU bound</li>
+					<li class="fragment" data-fragment-index="3">memory bound</li>
+					<li style="margin: 30px;" class="fragment">space</li>
+					<li style="margin: 30px;" class="fragment">latency</li>
+					<li class="fragment" data-fragment-index="4">IO bound</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h4>Scalability</h4>
+				<h5>All computer problems are either</h5>
+				<ul>
+					<li style="color: bisque;">CPU bound -> time complexity</li>
+					<li style="color: bisque;">memeory bound -> space complexity</li>
+					<li>IO bound</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h4>What units? 😕</h4>
+				<h5>All computer problems are either</h5>
+				<ul>
+					<li style="color: bisque;">time complexity -> years</li>
+					<li style="color: bisque;">space complexity -> Kg</li>
+					<li>IO bound</li>
+				</ul>
+			</section>
+			<section>
+				<h4>Examples</h4>
+				<img data-src="static/complexity.png">
+			</section>
+			<section>
+				<h3>Back to the FFT</h3>
+				<ul>
+					<li class="fragment">The time complexity for calculating the DFT is \[Ο({n^{2}})\]</li>
+					<li class="fragment">But the the some of FFT magic it becomes \[Ο({n\log{n}})\]</li>
+				</ul>
+			</section>
+			<section>
+				<h4 class="fragment" data-fragment-index="2">aka, Divide & Conquer</h4>
+				<q>A basic rule of mathematical life: if the universe hands you a hard problem, try to solve an
+					easier
+					one instead, and hope the simple version is close enough to the original problem that the
+					universe
+					doesn’t object.</q>
+				<span style=" display: block; color: bisque;">- Jordan Ellenberg, How Not To Be Wrong</i>
+			</section>
+			<section>
+				<div class="fig-container" data-file="merge.html"></div>
+			</section>
+			<section>
+				<h2>History</h2>
+			</section>
+			<section>
+				<h4>Principal Discoveries of Efficient Methods
+					of Computing the DFT</h4>
+				<img data-src="static/discovery.png">
+			</section>
+			<section data-auto-animate>
+				<h3>Is it invented or discovered?</h3>
+			</section>
+			<section data-auto-animate>
+				<h3>Is it(math) invented or discovered?</h3>
+			</section>
+			<section>
+				<h4>Principal Discoveries of Efficient Methods
+					of Computing the DFT</h4>
+				<img data-src="static/discovery.png">
+			</section>
+			<section>
+				<p>Only until 1965 to publish it as standalone!</p>
+			</section>
+			<section>
+				<iframe width="840" height="472" src="https://www.youtube.com/embed/vWhECe9MKWc?start=602"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
+			</section>
+			<section data-auto-animate>
+				<h2>Next time</h2>
+				<ul>
+					<li>Deep Dive</li>
+					<li>Implementation</li>
+				</ul>
+			</section>
+			<section>
+				bye 👋
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script src="plugin/zoom/zoom.js"></script>
+	<script src="plugin/d3.js"></script>
+	<script>
+		Reveal.initialize({
+			slideNumber: true,
+			controls: true,
+			controls: true,
+			controlsTutorial: true,
+			hash: true,
+			autoPlayMedia: true,
+			dependencies: [
+				{ src: 'plugin/d3.js' }
+			],
+
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				TeX: { Macros: { RR: "{\\bf R}" } }
+			},
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath, RevealZoom]
+		});
+	</script>
+</body>
+
+</html>
