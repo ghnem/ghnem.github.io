@@ -554,14 +554,18 @@ DevContainer will activate the virtual environment for you (if doesn't reload ru
 </div>
 <h2 id="task-runner"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.4 3.419a.639.639 0 0 1 1.2 0l.61 1.668a9.59 9.59 0 0 0 5.703 5.703l1.668.61a.639.639 0 0 1 0 1.2l-1.668.61a9.59 9.59 0 0 0-5.703 5.703l-.61 1.668a.639.639 0 0 1-1.2 0l-.61-1.668a9.59 9.59 0 0 0-5.703-5.703l-1.668-.61a.639.639 0 0 1 0-1.2l1.668-.61a9.59 9.59 0 0 0 5.703-5.703zM8 16.675a.266.266 0 0 1 .5 0l.254.694a4 4 0 0 0 2.376 2.377l.695.254a.266.266 0 0 1 0 .5l-.695.254a4 4 0 0 0-2.376 2.377l-.254.694a.266.266 0 0 1-.5 0l-.254-.694a4 4 0 0 0-2.376-2.377l-.695-.254a.266.266 0 0 1 0-.5l.695-.254a4 4 0 0 0 2.376-2.377zM4.2.21a.32.32 0 0 1 .6 0l.305.833a4.8 4.8 0 0 0 2.852 2.852l.833.305a.32.32 0 0 1 0 .6l-.833.305a4.8 4.8 0 0 0-2.852 2.852L4.8 8.79a.32.32 0 0 1-.6 0l-.305-.833a4.8 4.8 0 0 0-2.852-2.852L.21 4.8a.32.32 0 0 1 0-.6l.833-.305a4.8 4.8 0 0 0 2.852-2.852z"/></svg></span> Task runner</h2>
 <p>I am using <a href="https://poethepoet.natn.io/index.html">poethepoet</a> to ease the development workflow. Tasks are defined in the <code>pyproject.toml</code> file.</p>
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>poe<span class="w"> </span>--help
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You don't need the <code>--no-ansi</code> flag if you are running the commands in a normal terminal.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>poe<span class="w"> </span>--help<span class="w"> </span>--no-ansi
 <span class="go">Poe the Poet - A task runner that works well with poetry.</span>
-<span class="go">version [36m0.32.1[0m</span>
+<span class="go">version 0.32.1</span>
 
-<span class="go">[39;1mUsage:[0m</span>
-<span class="go">  [39;4mpoe[0m [global options] task [task arguments]</span>
+<span class="go">Usage:</span>
+<span class="go">  poe [global options] task [task arguments]</span>
 
-<span class="go">[39;1mGlobal options:[0m</span>
+<span class="go">Global options:</span>
 <span class="go">  -h, --help            Show this help page and exit</span>
 <span class="go">  --version             Print the version and exit</span>
 <span class="go">  -v, --verbose         Increase command output (repeatable)</span>
@@ -573,21 +577,21 @@ DevContainer will activate the virtual environment for you (if doesn't reload ru
 <span class="go">  --ansi                Force enable ANSI output</span>
 <span class="go">  --no-ansi             Force disable ANSI output</span>
 
-<span class="go">[39;1mConfigured tasks:[0m</span>
-<span class="go">  [36mdev                 [0m  Run flask development server in debug mode</span>
-<span class="go">  [36mdev-docs            [0m  Run mkdocs development server</span>
-<span class="go">  [36mmypy                [0m  Run mypy type checker</span>
-<span class="go">  [36mpyright             [0m  Run pyright type checker</span>
-<span class="go">  [36mlint                [0m  Lint the projec with ruff</span>
-<span class="go">  [36mfmt                 [0m  Format the project with isort and black</span>
-<span class="go">  [36mcreate_admin        [0m  Create a new admin user</span>
-<span class="go">    [34m--first-name       [0m</span>
-<span class="go">    [34m--last-name        [0m</span>
-<span class="go">    [34m--email            [0m</span>
-<span class="go">    [34m--phone            [0m</span>
-<span class="go">    [34m--password         [0m</span>
-<span class="go">  [36mswagger             [0m  Export the swagger documentation to a file</span>
-<span class="go">    [34m--path             [0m The path to export the swagger documentation to [default: docs/swagger.json]</span>
+<span class="go">Configured tasks:</span>
+<span class="go">  dev                   Run flask development server in debug mode</span>
+<span class="go">  dev-docs              Run mkdocs development server</span>
+<span class="go">  mypy                  Run mypy type checker</span>
+<span class="go">  pyright               Run pyright type checker</span>
+<span class="go">  lint                  Lint the projec with ruff</span>
+<span class="go">  fmt                   Format the project with isort and black</span>
+<span class="go">  create_admin          Create a new admin user</span>
+<span class="go">    --first-name       </span>
+<span class="go">    --last-name        </span>
+<span class="go">    --email            </span>
+<span class="go">    --phone            </span>
+<span class="go">    --password         </span>
+<span class="go">  swagger               Export the swagger documentation to a file</span>
+<span class="go">    --path              The path to export the swagger documentation to [default: docs/swagger.json]</span>
 </code></pre></div>
 <h2 id="running-flask-dev-server"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 15.584V8.416a.5.5 0 0 1 .77-.42l5.576 3.583a.5.5 0 0 1 0 .842l-5.576 3.584a.5.5 0 0 1-.77-.42Z"/><path d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12m11-9.5A9.5 9.5 0 0 0 2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5"/></svg></span> Running flask dev server</h2>
 <p>To run the server, you can use the <code>poe</code> task runner.</p>
