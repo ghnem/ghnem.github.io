@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../development/">
+        <link rel="prev" href="../swagger/">
       
-      
-        <link rel="next" href="../swagger/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>Rationale - Alfa Care</title>
+        <title>ERD - Alfa Care</title>
       
     
     
@@ -61,6 +59,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#e-commerce-erd" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -93,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Rationale
+              ERD
             
           </span>
         </div>
@@ -223,17 +226,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../rationale/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -242,7 +238,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -271,10 +266,19 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../e-commerce-erd/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -283,6 +287,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -304,6 +309,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -318,9 +325,11 @@
                   
 
 
-  <h1>Rationale</h1>
-
-
+<h1 id="e-commerce-erd">E-Commerce ERD</h1>
+<pre class="mermaid"><code>erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses</code></pre>
 
 
 
