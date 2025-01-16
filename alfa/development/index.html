@@ -389,7 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../e-commerce-erd/" class="md-nav__link">
+      <a href="../erd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -531,20 +531,20 @@
 </div>
 <ol>
 <li>Install <a href="https://docs.docker.com/get-docker/">Docker</a>, <a href="https://code.visualstudio.com/">Visual Studio Code</a>, and the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a> extension.</li>
-<li>Clone the repository.</li>
 <li>Open the repository in Visual Studio Code.</li>
 <li>The DevContainers extension will prompt you to reopen the project in a container. If it doesn't, in the command palette <code>(ctrl + shift + p)</code>, search for <code>DevContainer: Reopen in Container</code>.</li>
 <li>The project will build the container and install all dependencies. This may take a few minutes.</li>
-<li>Profit! <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.322.75h1.176a1.75 1.75 0 0 1 1.75 1.749v1.177a10.75 10.75 0 0 1-2.925 7.374l-1.228 1.304a24 24 0 0 1-1.596 1.542v5.038c0 .615-.323 1.184-.85 1.5l-4.514 2.709a.75.75 0 0 1-1.12-.488l-.963-4.572a1.3 1.3 0 0 1-.14-.129L8.04 15.96l-1.994-1.873a1.3 1.3 0 0 1-.129-.14l-4.571-.963a.75.75 0 0 1-.49-1.12l2.71-4.514c.316-.527.885-.85 1.5-.85h5.037a24 24 0 0 1 1.542-1.594l1.304-1.23A10.75 10.75 0 0 1 20.321.75Zm-6.344 4.018v-.001l-1.304 1.23a22.3 22.3 0 0 0-3.255 3.851l-2.193 3.29 1.859 1.744.034.034 1.743 1.858 3.288-2.192a22.3 22.3 0 0 0 3.854-3.257l1.228-1.303a9.25 9.25 0 0 0 2.517-6.346V2.5a.25.25 0 0 0-.25-.25h-1.177a9.25 9.25 0 0 0-6.344 2.518M6.5 21c-1.209 1.209-3.901 1.445-4.743 1.49a.24.24 0 0 1-.18-.067.24.24 0 0 1-.067-.18c.045-.842.281-3.534 1.49-4.743.9-.9 2.6-.9 3.5 0s.9 2.6 0 3.5m-.592-8.588L8.17 9.017q.346-.519.717-1.017H5.066a.25.25 0 0 0-.214.121l-2.167 3.612ZM16 15.112q-.5.372-1.018.718l-3.393 2.262.678 3.223 3.612-2.167a.25.25 0 0 0 .121-.214ZM17.5 8a1.5 1.5 0 1 1-3.001-.001A1.5 1.5 0 0 1 17.5 8"/></svg></span> You have a fully fledged development environment ready to go.</li>
 </ol>
+<p>Profit! <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.322.75h1.176a1.75 1.75 0 0 1 1.75 1.749v1.177a10.75 10.75 0 0 1-2.925 7.374l-1.228 1.304a24 24 0 0 1-1.596 1.542v5.038c0 .615-.323 1.184-.85 1.5l-4.514 2.709a.75.75 0 0 1-1.12-.488l-.963-4.572a1.3 1.3 0 0 1-.14-.129L8.04 15.96l-1.994-1.873a1.3 1.3 0 0 1-.129-.14l-4.571-.963a.75.75 0 0 1-.49-1.12l2.71-4.514c.316-.527.885-.85 1.5-.85h5.037a24 24 0 0 1 1.542-1.594l1.304-1.23A10.75 10.75 0 0 1 20.321.75Zm-6.344 4.018v-.001l-1.304 1.23a22.3 22.3 0 0 0-3.255 3.851l-2.193 3.29 1.859 1.744.034.034 1.743 1.858 3.288-2.192a22.3 22.3 0 0 0 3.854-3.257l1.228-1.303a9.25 9.25 0 0 0 2.517-6.346V2.5a.25.25 0 0 0-.25-.25h-1.177a9.25 9.25 0 0 0-6.344 2.518M6.5 21c-1.209 1.209-3.901 1.445-4.743 1.49a.24.24 0 0 1-.18-.067.24.24 0 0 1-.067-.18c.045-.842.281-3.534 1.49-4.743.9-.9 2.6-.9 3.5 0s.9 2.6 0 3.5m-.592-8.588L8.17 9.017q.346-.519.717-1.017H5.066a.25.25 0 0 0-.214.121l-2.167 3.612ZM16 15.112q-.5.372-1.018.718l-3.393 2.262.678 3.223 3.612-2.167a.25.25 0 0 0 .121-.214ZM17.5 8a1.5 1.5 0 1 1-3.001-.001A1.5 1.5 0 0 1 17.5 8"/></svg></span> You have a fully fledged development environment ready to go.</p>
 <h3 id="local-setup">Local setup</h3>
 <p>If you prefer not to use DevContainer, you can set up the project locally.</p>
 <ol>
 <li>Install <a href="https://docs.astral.sh/uv/#getting-started">astral/uv</a></li>
 <li>Run <code>uv sync</code> It will create a virtual environment with the version specified in the <code>.python-version</code> file.</li>
-<li>Activate the virtual environment <code>source .venv/bin/activate</code></li>
-<li>Run a redis server on <code>localhost:6379</code></li>
-<li>copy <code>.env.example</code> to <code>.env</code> and fill in the required environment variables.</li>
+<li>Activate the virtual environment <code>source .venv/bin/activate</code>.</li>
+<li>Run a redis server on <code>localhost:6379</code>.</li>
+<li>Copy <code>.env.example</code> to <code>.env</code> and fill in the required environment variables.</li>
+<li>Install graphviz for generating docs <code>sudo apt-get install graphviz libgraphviz-dev</code> (optional).</li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -592,6 +592,8 @@ DevContainer will activate the virtual environment for you (if doesn't reload ru
 <span class="go">    --password         </span>
 <span class="go">  swagger               Export the swagger documentation to a file</span>
 <span class="go">    --path              The path to export the swagger documentation to [default: docs/swagger.json]</span>
+<span class="go">  erd                   Export the ERD documentation to a file</span>
+<span class="go">    --path              The path to export the ERD documentation to [default: docs/erd.md]</span>
 </code></pre></div>
 <h2 id="running-flask-dev-server"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 15.584V8.416a.5.5 0 0 1 .77-.42l5.576 3.583a.5.5 0 0 1 0 .842l-5.576 3.584a.5.5 0 0 1-.77-.42Z"/><path d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12m11-9.5A9.5 9.5 0 0 0 2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5"/></svg></span> Running flask dev server</h2>
 <p>To run the server, you can use the <code>poe</code> task runner.</p>
@@ -671,7 +673,7 @@ Config<span class="o">(</span><span class="nv">db_url</span><span class="o">=</s
 <span class="go">TOTAL                       261     14    95%</span>
 
 
-<span class="go">============================== 14 passed in 2.24s ==============================</span>
+<span class="go">============================== 14 passed in 1.75s ==============================</span>
 </code></pre></div>
 <h2 id="quality-checks"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg></span> Quality checks</h2>
 <p>To ensure a high level of code quality, I am using <a href="https://mypy.readthedocs.io/en/stable/">mypy</a>, <a href="https://astral.sh/ruff">ruff</a></p>
