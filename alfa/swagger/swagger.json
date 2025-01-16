@@ -1,0 +1,345 @@
+{
+  "swagger": "2.0",
+  "basePath": "/v1",
+  "paths": {
+    "/protected/admin-only": {
+      "get": {
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "200": {
+            "description": "OK"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        },
+        "operationId": "get_admin_only_resource",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "protected"
+        ]
+      }
+    },
+    "/protected/all-users": {
+      "get": {
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "200": {
+            "description": "OK"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        },
+        "operationId": "get_protected_resource",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "protected"
+        ]
+      }
+    },
+    "/public/": {
+      "get": {
+        "responses": {
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "200": {
+            "description": "Welcome message"
+          }
+        },
+        "operationId": "get_public_resource",
+        "tags": [
+          "public"
+        ]
+      }
+    },
+    "/users/login": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "User successfully logged in",
+            "schema": {
+              "$ref": "#/definitions/RegisterUserResponse"
+            }
+          },
+          "400": {
+            "description": "Wrong email or password"
+          },
+          "422": {
+            "description": "Validation error",
+            "schema": {
+              "$ref": "#/definitions/RegisterUserError"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        },
+        "summary": "Log in a user",
+        "description": "Returns a JWT token for the user.",
+        "operationId": "post_user_login_resource",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/LoginUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "users"
+        ]
+      }
+    },
+    "/users/register": {
+      "post": {
+        "responses": {
+          "201": {
+            "description": "User successfully created",
+            "schema": {
+              "$ref": "#/definitions/RegisterUserResponse"
+            }
+          },
+          "409": {
+            "description": "User already exists"
+          },
+          "422": {
+            "description": "Validation error",
+            "schema": {
+              "$ref": "#/definitions/RegisterUserError"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        },
+        "summary": "Create a new user",
+        "description": "Returns the created user with an assigned ID.",
+        "operationId": "post_user_register_resource",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/RegisterUserRequest"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "users"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Alfa Care",
+    "version": "0.1.0",
+    "description": "The API for Alfa Care."
+  },
+  "produces": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "security": [
+    {
+      "bearer": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "users",
+      "description": "User operations"
+    },
+    {
+      "name": "protected",
+      "description": "Protected routes"
+    },
+    {
+      "name": "public",
+      "description": "Public routes"
+    }
+  ],
+  "definitions": {
+    "RegisterUserRequest": {
+      "required": [
+        "email",
+        "first_name",
+        "last_name",
+        "password",
+        "phone_number"
+      ],
+      "properties": {
+        "first_name": {
+          "type": "string",
+          "description": "The user's firt name",
+          "example": "John",
+          "maxLength": 32
+        },
+        "last_name": {
+          "type": "string",
+          "description": "The user's firt name",
+          "example": "Doe",
+          "maxLength": 32
+        },
+        "email": {
+          "type": "string",
+          "description": "The user's email",
+          "example": "user@example.com",
+          "maxLength": 255
+        },
+        "phone_number": {
+          "type": "string",
+          "description": "The user's phone number",
+          "example": "1234567890",
+          "maxLength": 15
+        },
+        "password": {
+          "type": "string",
+          "description": "The user's password"
+        }
+      },
+      "type": "object"
+    },
+    "RegisterUserResponse": {
+      "required": [
+        "email",
+        "first_name",
+        "last_name",
+        "phone_number"
+      ],
+      "properties": {
+        "first_name": {
+          "type": "string",
+          "description": "The user's firt name",
+          "example": "John",
+          "maxLength": 32
+        },
+        "last_name": {
+          "type": "string",
+          "description": "The user's firt name",
+          "example": "Doe",
+          "maxLength": 32
+        },
+        "email": {
+          "type": "string",
+          "description": "The user's email",
+          "example": "user@example.com",
+          "maxLength": 255
+        },
+        "phone_number": {
+          "type": "string",
+          "description": "The user's phone number",
+          "example": "1234567890",
+          "maxLength": 15
+        },
+        "id": {
+          "type": "string",
+          "description": "The user's identifier"
+        }
+      },
+      "type": "object"
+    },
+    "RegisterUserError": {
+      "properties": {
+        "error": {
+          "type": "array",
+          "description": "The error messages",
+          "example": [
+            {
+              "ctx": {
+                "reason": "An email address must have an @-sign."
+              },
+              "input": "user",
+              "loc": [
+                "email"
+              ],
+              "msg": "value is not a valid email address: An email address must have an @-sign.",
+              "type": "value_error"
+            }
+          ],
+          "items": {
+            "type": "object"
+          }
+        }
+      },
+      "type": "object"
+    },
+    "LoginUserRequest": {
+      "required": [
+        "email",
+        "password"
+      ],
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "The user's email",
+          "example": "user@example.com",
+          "maxLength": 255
+        },
+        "password": {
+          "type": "string",
+          "description": "The user's password"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "responses": {
+    "ParseError": {
+      "description": "When a mask can't be parsed"
+    },
+    "MaskError": {
+      "description": "When any error occurs on mask"
+    }
+  },
+  "host": "localhost:5000",
+  "schemes": [
+    "http"
+  ],
+  "securityDefinitions": {
+    "bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  }
+}
