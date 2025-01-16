@@ -332,14 +332,61 @@ users {
    DATETIME created_at 
    DATETIME deleted_at 
    NVARCHAR(255) email 
-   NVARCHAR(32) first_name 
+   NVARCHAR(64) first_name 
    DATETIME last_login_at 
-   NVARCHAR(32) last_name 
+   NVARCHAR(64) last_name 
    VARCHAR(256) password 
    VARCHAR(15) phone_number 
-   VARCHAR(5) role 
+   ENUM role 
    DATETIME updated_at 
-}</code></pre>
+}
+addresses {
+ UUID id PK
+   NVARCHAR(255) address 
+   DATETIME created_at 
+   DATETIME deleted_at 
+   DATETIME updated_at 
+   UUID user_id 
+}
+products {
+ UUID id PK
+   DATETIME created_at 
+   NVARCHAR(3) currency 
+   DATETIME deleted_at 
+   NVARCHAR(255) description 
+   NVARCHAR(255) name 
+   DECIMAL(15) price 
+   NVARCHAR(64) sku 
+   DATETIME updated_at 
+}
+orders {
+ UUID id PK
+   UUID address_id 
+   DATETIME created_at 
+   UUID customer_id 
+   DATETIME deleted_at 
+   ENUM status 
+   FLOAT total_amount 
+   DATETIME updated_at 
+}
+order_items {
+ UUID id PK
+   DATETIME created_at 
+   NVARCHAR(3) currency 
+   DATETIME deleted_at 
+   DECIMAL(15) discount_amount 
+   DECIMAL(15) discount_percentage 
+   UUID order_id 
+   DECIMAL(15) price 
+   UUID product_id 
+   INTEGER quantity 
+   DATETIME updated_at 
+}
+users 1--0+ addresses : has
+users 1--0+ orders : has
+addresses 1--0+ orders : has
+products 1--0+ order_items : has
+orders 1--0+ order_items : has</code></pre>
 
 
 
