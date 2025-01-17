@@ -342,9 +342,13 @@ users {
 }
 addresses {
  UUID id PK
-   NVARCHAR(255) address 
+   NVARCHAR(64) city 
+   NVARCHAR(64) country 
    DATETIME created_at 
    DATETIME deleted_at 
+   NVARCHAR(255) line_1 
+   NVARCHAR(255) line_2 
+   NVARCHAR(64) state 
    DATETIME updated_at 
    UUID user_id 
 }
