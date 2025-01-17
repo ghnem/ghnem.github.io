@@ -321,6 +321,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="API endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rate-limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rate limit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -373,6 +388,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="API endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rate-limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rate limit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -405,17 +435,13 @@
 harmony yet offer a decent developer experience.</p>
 <h2 id="api-endpoints">API endpoints</h2>
 <ul>
-<li>
-<p>I used <a href="https://flask-restx.readthedocs.io/">flask-restx</a>; it's the only actively maintained flask library with <a href="#swagger">swagger</a> support.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See the <a href="#swagger">swagger</a> section for explanation on why it is a necessary requirement.</p>
-</div>
-</li>
-<li>
-<p>The API is versioned, served under <code>/v1/</code>. The API is namespaced under <code>/api/</code>.</p>
-</li>
-<li>Operations are grouped in thier respective namespaces. For example, the user operations are under <code>/api/user/</code>. </li>
+<li>I used <a href="https://flask-restx.readthedocs.io/">flask-restx</a>; it's the only actively maintained flask library with <a href="#swagger">swagger</a> support.</li>
+</ul>
+<p>!!! note
+  See the <a href="#swagger">swagger</a> section for explanation on why it is a necessary requirement.</p>
+<ul>
+<li>The API is versioned, served under <code>/v1/</code>. The API is namespaced under <code>/api/</code>.</li>
+<li>Operations are grouped in thier respective namespaces. For example, the user operations are under <code>/api/user/</code>.</li>
 </ul>
 <p>I used <code>-</code> instead <code>_</code> in the endpoint names as it's the industry standard, for example, <code>/v1/protected/admin-only/</code> instead of <code>/admin_only/</code>.</p>
 <p>There are three namespaces:</p>
@@ -424,6 +450,9 @@ harmony yet offer a decent developer experience.</p>
 <li><code>protected</code>: for resource (only GET now) that require authentication.</li>
 <li><code>public</code>: for resources that are open to the public.</li>
 </ol>
+<h3 id="rate-limit">Rate limit</h3>
+<p>By default, all endpoints are rate limited to 100 requests per minute. The <code>/user/login</code> endpoint has a limit of 3/minute attempts per email.
+And the <code>/public</code> has a limit of 10 requests per minute.</p>
 <h2 id="swagger">Swagger</h2>
 <p>Instead of manually documenting the API using Postman. I relied on the auto-generated API documentation using Swagger.</p>
 <p>This has the following benefits:</p>

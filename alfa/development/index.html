@@ -343,6 +343,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#production-ish-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production-ish build
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -524,6 +533,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#production-ish-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production-ish build
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -544,17 +562,18 @@
 <h3 id="devcontainer-recommended"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.954 17H2.75A1.75 1.75 0 0 1 1 15.25V3.75C1 2.784 1.784 2 2.75 2h18.5c.966 0 1.75.784 1.75 1.75v11.5A1.75 1.75 0 0 1 21.25 17h-6.204c.171 1.375.805 2.652 1.769 3.757A.752.752 0 0 1 16.25 22h-8.5a.75.75 0 0 1-.565-1.243c.964-1.105 1.598-2.382 1.769-3.757M21.5 3.75a.25.25 0 0 0-.25-.25H2.75a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h18.5a.25.25 0 0 0 .25-.25ZM13.537 17h-3.074c-.126 1.266-.564 2.445-1.223 3.5h5.52c-.659-1.055-1.098-2.234-1.223-3.5"/></svg></span> DevContainer (recommended)</h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
+</div>
 <p>The project is built on top of a <a href="https://code.visualstudio.com/docs/devcontainers/create-dev-container">DevContainer</a>,
 for minimal onboarding overhead and optimal productivity.</p>
-<p>The DevContainer has all the tools required for development; vscode extensions (sqlite, redis, pylance, redis, githhub actions, etc..),
-redis server, and CLIs for development and SDK generation. Also, it will pick up the right venv and activate it for you.</p>
-</div>
+<div class="highlight"><pre><span></span><code>The DevContainer has all the tools required for development; vscode extensions (sqlite, redis, pylance, redis, githhub actions, etc..),
+redis server, and CLIs for development and SDK generation. Also, it will pick up the right venv and activate it for you.
+</code></pre></div>
 <ol>
 <li>Install <a href="https://docs.docker.com/get-docker/">Docker</a>, <a href="https://code.visualstudio.com/">Visual Studio Code</a>,
-and the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a> extension.</li>
+   and the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a> extension.</li>
 <li>Open the repository in Visual Studio Code.</li>
-<li>The DevContainers extension will prompt you to reopen the project in a container. If it doesn't, in 
-the command palette <code>(ctrl + shift + p)</code>, search for <code>DevContainer: Reopen in Container</code>.</li>
+<li>The DevContainers extension will prompt you to reopen the project in a container. If it doesn't, in
+   the command palette <code>(ctrl + shift + p)</code>, search for <code>DevContainer: Reopen in Container</code>.</li>
 <li>The project will build the container and install all dependencies. This may take a few minutes.</li>
 </ol>
 <p>Profit! <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.322.75h1.176a1.75 1.75 0 0 1 1.75 1.749v1.177a10.75 10.75 0 0 1-2.925 7.374l-1.228 1.304a24 24 0 0 1-1.596 1.542v5.038c0 .615-.323 1.184-.85 1.5l-4.514 2.709a.75.75 0 0 1-1.12-.488l-.963-4.572a1.3 1.3 0 0 1-.14-.129L8.04 15.96l-1.994-1.873a1.3 1.3 0 0 1-.129-.14l-4.571-.963a.75.75 0 0 1-.49-1.12l2.71-4.514c.316-.527.885-.85 1.5-.85h5.037a24 24 0 0 1 1.542-1.594l1.304-1.23A10.75 10.75 0 0 1 20.321.75Zm-6.344 4.018v-.001l-1.304 1.23a22.3 22.3 0 0 0-3.255 3.851l-2.193 3.29 1.859 1.744.034.034 1.743 1.858 3.288-2.192a22.3 22.3 0 0 0 3.854-3.257l1.228-1.303a9.25 9.25 0 0 0 2.517-6.346V2.5a.25.25 0 0 0-.25-.25h-1.177a9.25 9.25 0 0 0-6.344 2.518M6.5 21c-1.209 1.209-3.901 1.445-4.743 1.49a.24.24 0 0 1-.18-.067.24.24 0 0 1-.067-.18c.045-.842.281-3.534 1.49-4.743.9-.9 2.6-.9 3.5 0s.9 2.6 0 3.5m-.592-8.588L8.17 9.017q.346-.519.717-1.017H5.066a.25.25 0 0 0-.214.121l-2.167 3.612ZM16 15.112q-.5.372-1.018.718l-3.393 2.262.678 3.223 3.612-2.167a.25.25 0 0 0 .121-.214ZM17.5 8a1.5 1.5 0 1 1-3.001-.001A1.5 1.5 0 0 1 17.5 8"/></svg></span> You have a fully fledged development environment ready to go.</p>
@@ -564,25 +583,26 @@ the command palette <code>(ctrl + shift + p)</code>, search for <code>DevContain
 <li>Install <a href="https://docs.astral.sh/uv/#getting-started">astral/uv</a>.</li>
 <li>Run <code>uv sync</code> It will create a virtual environment with the version specified in the <code>.python-version</code> file.</li>
 <li>Activate the virtual environment <code>source .venv/bin/activate</code>.</li>
-<li>Run a redis server on <code>localhost:6379</code>.</li>
+<li>Run a Redis server on <code>localhost:6379</code>.</li>
 <li>Copy <code>.env.example</code> to <code>.env</code> and fill in the required environment variables.</li>
 <li>(Optional) install graphviz for generating docs <code>sudo apt-get install graphviz libgraphviz-dev</code>.</li>
 <li>(Optional) install the <a href="https://openapi-generator.tech/docs/installation">OpenAPI Generator</a> and Java if you want to generate SDKs.</li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
+</div>
 <p>All the commands from now on assume you have the virtual environment activated. Opening a new terminal in the
 DevContainer will activate the virtual environment for you (if doesn't reload run <code>reload window</code> from the command pallete).</p>
-<p>If don't want to activate the virtual environment, you can prefix the commands with <code>uv run</code>, e.g., <code>uv run poe dev</code>.    </p>
-</div>
+<div class="highlight"><pre><span></span><code>If don&#39;t want to activate the virtual environment, you can prefix the commands with `uv run`, e.g., `uv run poe dev`.
+</code></pre></div>
 <h2 id="task-runner"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.4 3.419a.639.639 0 0 1 1.2 0l.61 1.668a9.59 9.59 0 0 0 5.703 5.703l1.668.61a.639.639 0 0 1 0 1.2l-1.668.61a9.59 9.59 0 0 0-5.703 5.703l-.61 1.668a.639.639 0 0 1-1.2 0l-.61-1.668a9.59 9.59 0 0 0-5.703-5.703l-1.668-.61a.639.639 0 0 1 0-1.2l1.668-.61a9.59 9.59 0 0 0 5.703-5.703zM8 16.675a.266.266 0 0 1 .5 0l.254.694a4 4 0 0 0 2.376 2.377l.695.254a.266.266 0 0 1 0 .5l-.695.254a4 4 0 0 0-2.376 2.377l-.254.694a.266.266 0 0 1-.5 0l-.254-.694a4 4 0 0 0-2.376-2.377l-.695-.254a.266.266 0 0 1 0-.5l.695-.254a4 4 0 0 0 2.376-2.377zM4.2.21a.32.32 0 0 1 .6 0l.305.833a4.8 4.8 0 0 0 2.852 2.852l.833.305a.32.32 0 0 1 0 .6l-.833.305a4.8 4.8 0 0 0-2.852 2.852L4.8 8.79a.32.32 0 0 1-.6 0l-.305-.833a4.8 4.8 0 0 0-2.852-2.852L.21 4.8a.32.32 0 0 1 0-.6l.833-.305a4.8 4.8 0 0 0 2.852-2.852z"/></svg></span> Task runner</h2>
-<p>I am using <a href="https://poethepoet.natn.io/index.html">poethepoet</a> to ease the development workflow. 
+<p>I am using <a href="https://poethepoet.natn.io/index.html">poethepoet</a> to ease the development workflow.
 Tasks are defined in the <code>pyproject.toml</code> file.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>You don't need the <code>--no-ansi</code> flag if you are running the commands in a normal terminal. 
-The flag is used to remove the ANSI as the docs gets generated in CI.</p>
 </div>
+<p>You don't need the <code>--no-ansi</code> flag if you are running the commands in a normal terminal.
+The flag is used to remove the ANSI as the docs gets generated in CI.</p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>poe<span class="w"> </span>--help<span class="w"> </span>--no-ansi
 <span class="go">Poe the Poet - A task runner that works well with poetry.</span>
 <span class="go">version 0.32.1</span>
@@ -624,9 +644,9 @@ The flag is used to remove the ANSI as the docs gets generated in CI.</p>
 </code></pre></div>
 <h2 id="running-flask-dev-server"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 15.584V8.416a.5.5 0 0 1 .77-.42l5.576 3.583a.5.5 0 0 1 0 .842l-5.576 3.584a.5.5 0 0 1-.77-.42Z"/><path d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12m11-9.5A9.5 9.5 0 0 0 2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5"/></svg></span> Running flask dev server</h2>
 <p>To run the server, you can use the <code>poe</code> task runner.</p>
-<p><div class="highlight"><pre><span></span><code>poe<span class="w"> </span>dev
+<div class="highlight"><pre><span></span><code>poe<span class="w"> </span>dev
 </code></pre></div>
-A typial output if you run this in a fresh DevContainer would look like this:</p>
+<p>A typical output if you run this in a fresh DevContainer would look like this:</p>
 <details class="example">
 <summary><code>poe dev</code> output</summary>
 <div class="highlight"><pre><span></span><code><span class="nv">Poe</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>flask<span class="w"> </span>--app<span class="w"> </span>app<span class="w"> </span>run<span class="w"> </span>--debug
@@ -666,9 +686,42 @@ Config<span class="o">(</span><span class="nv">db_url</span><span class="o">=</s
 *<span class="w"> </span>Debugger<span class="w"> </span>PIN:<span class="w"> </span><span class="m">113</span>-386-978
 </code></pre></div>
 </details>
-<p>Now you can vist <a href="http://127.0.0.1:5000">http://localhost:5000</a> to see the API documentation.</p>
+<p>Now you can visit <a href="http://127.0.0.1:5000">http://localhost:5000</a> to see the API documentation.</p>
 <h2 id="running-tests"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 8.807V3.5h-.563a.75.75 0 0 1 0-1.5h9.125a.75.75 0 0 1 0 1.5H16v5.307l5.125 9.301c.964 1.75-.302 3.892-2.299 3.892H5.174c-1.998 0-3.263-2.142-2.3-3.892ZM4.189 18.832a1.123 1.123 0 0 0 .985 1.668h13.652a1.123 1.123 0 0 0 .985-1.668L17.7 15H6.3ZM14.5 3.5h-5V9a.75.75 0 0 1-.093.362L7.127 13.5h9.746l-2.28-4.138A.75.75 0 0 1 14.5 9Z"/></svg></span> Running tests</h2>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytest<span class="w"> </span>--cov<span class="w"> </span>app
+<span class="go">============================= test session starts ==============================</span>
+<span class="go">platform linux -- Python 3.13.1, pytest-8.3.4, pluggy-1.5.0</span>
+<span class="go">rootdir: /home/runner/work/alfa/alfa</span>
+<span class="go">configfile: pyproject.toml</span>
+<span class="go">plugins: mock-3.14.0, alembic-0.11.1, cov-6.0.0, profiling-1.8.1, logfire-3.1.1, xdist-3.6.1, hypothesis-6.123.17</span>
+<span class="go">collected 14 items</span>
+
+<span class="go">tests/v1/test_protected.py .....                                         [ 35%]</span>
+<span class="go">tests/v1/test_public.py ...                                              [ 57%]</span>
+<span class="go">tests/v1/test_user.py ......                                             [100%]</span>
+
+<span class="go">---------- coverage: platform linux, python 3.13.1-final-0 -----------</span>
+<span class="go">Name                      Stmts   Miss  Cover</span>
+<span class="go">---------------------------------------------</span>
+<span class="go">app/__init__.py               1      0   100%</span>
+<span class="go">app/__main__.py              42      5    88%</span>
+<span class="go">app/api/__init__.py           0      0   100%</span>
+<span class="go">app/api/v1/__init__.py        9      0   100%</span>
+<span class="go">app/api/v1/protected.py      31      0   100%</span>
+<span class="go">app/api/v1/public.py         12      0   100%</span>
+<span class="go">app/api/v1/root.py           11      0   100%</span>
+<span class="go">app/api/v1/user.py           74      7    91%</span>
+<span class="go">app/config.py                36      3    92%</span>
+<span class="go">app/db/__init__.py            0      0   100%</span>
+<span class="go">app/db/connection.py          9      0   100%</span>
+<span class="go">app/db/models.py             85      0   100%</span>
+<span class="go">app/db/queries.py             4      0   100%</span>
+<span class="go">app/schema/user.py           14      0   100%</span>
+<span class="go">---------------------------------------------</span>
+<span class="go">TOTAL                       328     15    95%</span>
+
+
+<span class="go">============================== 14 passed in 1.86s ==============================</span>
 </code></pre></div>
 <h2 id="quality-checks"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg></span> Quality checks</h2>
 <p>To ensure a high level of code quality, I am using <a href="https://mypy.readthedocs.io/en/stable/">mypy</a>, <a href="https://astral.sh/ruff">ruff</a>,
@@ -750,19 +803,21 @@ For example, to generate a Kotlin SDK, you can run the following command.</p>
 <ul>
 <li>
 <p><code>ci.yml</code> has 3 jobs</p>
-<ul>
-<li><code>check</code>runs the tests, linting, formatting checks.</li>
+</li>
+<li>
+<p><code>check</code>runs the tests, linting, formatting checks.</p>
+</li>
 <li><code>integration</code> makes sure the swagger documentation is up to date.</li>
-<li><code>docs</code> publishes the documentation to GitHub pages.</li>
-</ul>
+<li>
+<p><code>docs</code> publishes the documentation to GitHub pages.</p>
 </li>
 <li>
 <p><code>security.yml</code> has a single job</p>
-<ul>
+</li>
 <li><code>audit</code> checks for security vulnerabilities in code.</li>
 </ul>
-</li>
-</ul>
+<h2 id="production-ish-build">Production-ish build</h2>
+<p>The <code>Dockerfile</code> defines a production-ish build. It uses gunicon to serve the app. To try it, run <code>docker compose up</code>.</p>
 
 
 
