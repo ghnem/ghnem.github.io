@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../development/">
+        <link rel="prev" href="../erd/">
       
-      
-        <link rel="next" href="../swagger/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -60,6 +58,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#rationale" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -223,34 +226,6 @@
       
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Rationale
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
   
   
     <li class="md-nav__item">
@@ -287,6 +262,84 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Rationale
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Rationale
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      API endpoints
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swagger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Swagger
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -304,6 +357,34 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      API endpoints
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swagger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Swagger
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -318,9 +399,39 @@
                   
 
 
-  <h1>Rationale</h1>
-
-
+<h1 id="rationale">Rationale</h1>
+<p>I worked with flask as it is required in the assessment title, this is my first time using it!</p>
+<p>I have been a long time user of Django and FastAPI. So I spent some time selecting the libraries that can work in
+harmony yet offer a decent developer experience.</p>
+<h2 id="api-endpoints">API endpoints</h2>
+<ul>
+<li>
+<p>I used <a href="https://flask-restx.readthedocs.io/">flask-restx</a>; it's the only actively maintained flask library with <a href="#swagger">swagger</a> support.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the <a href="#swagger">swagger</a> section for explanation on why it is a necessary requirement.</p>
+</div>
+</li>
+<li>
+<p>The API is versioned, served under <code>/v1/</code>. The API is namespaced under <code>/api/</code>.</p>
+</li>
+<li>Operations are grouped in thier respective namespaces. For example, the user operations are under <code>/api/user/</code>. </li>
+</ul>
+<p>I used <code>-</code> instead <code>_</code> in the endpoint names as it's the industry standard, for example, <code>/v1/protected/admin-only/</code> instead of <code>/admin_only/</code>.</p>
+<p>There are three namespaces:</p>
+<ol>
+<li><code>user</code>: for user operations, like login, and register.</li>
+<li><code>protected</code>: for resource (only GET now) that require authentication.</li>
+<li><code>public</code>: for resources that are open to the public.</li>
+</ol>
+<h2 id="swagger">Swagger</h2>
+<p>Instead of manually documenting the API using Postman. I relied on the auto-generated API documentation using Swagger.</p>
+<p>This has the following benefits:</p>
+<ul>
+<li>Now the code is the single source of truth. Any changes in the code will be reflected in the documentation.</li>
+<li>We can try out the API directly from the documentation see <a href="/development#running-flask-dev-server">Running flask dev server</a> for more details.</li>
+<li>We can generate SDKs for the API in multiple languages. See <a href="/development/#generating-sdks">Generating SDKs</a> for more details.</li>
+</ul>
 
 
 

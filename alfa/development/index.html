@@ -12,7 +12,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../rationale/">
+        <link rel="next" href="../swagger/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -358,26 +358,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../rationale/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Rationale
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../swagger/" class="md-nav__link">
         
   
@@ -403,6 +383,26 @@
   
   <span class="md-ellipsis">
     ERD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rationale/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rationale
   </span>
   
 
@@ -666,41 +666,9 @@ Config<span class="o">(</span><span class="nv">db_url</span><span class="o">=</s
 *<span class="w"> </span>Debugger<span class="w"> </span>PIN:<span class="w"> </span><span class="m">113</span>-386-978
 </code></pre></div>
 </details>
+<p>Now you can vist <a href="http://127.0.0.1:5000">http://localhost:5000</a> to see the API documentation.</p>
 <h2 id="running-tests"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 8.807V3.5h-.563a.75.75 0 0 1 0-1.5h9.125a.75.75 0 0 1 0 1.5H16v5.307l5.125 9.301c.964 1.75-.302 3.892-2.299 3.892H5.174c-1.998 0-3.263-2.142-2.3-3.892ZM4.189 18.832a1.123 1.123 0 0 0 .985 1.668h13.652a1.123 1.123 0 0 0 .985-1.668L17.7 15H6.3ZM14.5 3.5h-5V9a.75.75 0 0 1-.093.362L7.127 13.5h9.746l-2.28-4.138A.75.75 0 0 1 14.5 9Z"/></svg></span> Running tests</h2>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytest<span class="w"> </span>--cov<span class="w"> </span>app
-<span class="go">============================= test session starts ==============================</span>
-<span class="go">platform linux -- Python 3.13.1, pytest-8.3.4, pluggy-1.5.0</span>
-<span class="go">rootdir: /home/runner/work/alfa/alfa</span>
-<span class="go">configfile: pyproject.toml</span>
-<span class="go">plugins: mock-3.14.0, alembic-0.11.1, cov-6.0.0, profiling-1.8.1, logfire-3.1.1, xdist-3.6.1, hypothesis-6.123.17</span>
-<span class="go">collected 14 items</span>
-
-<span class="go">tests/v1/test_protected.py .....                                         [ 35%]</span>
-<span class="go">tests/v1/test_public.py ...                                              [ 57%]</span>
-<span class="go">tests/v1/test_user.py ......                                             [100%]</span>
-
-<span class="go">---------- coverage: platform linux, python 3.13.1-final-0 -----------</span>
-<span class="go">Name                      Stmts   Miss  Cover</span>
-<span class="go">---------------------------------------------</span>
-<span class="go">app/__init__.py               1      0   100%</span>
-<span class="go">app/__main__.py              42      5    88%</span>
-<span class="go">app/api/__init__.py           0      0   100%</span>
-<span class="go">app/api/v1/__init__.py        9      0   100%</span>
-<span class="go">app/api/v1/protected.py      31      0   100%</span>
-<span class="go">app/api/v1/public.py         12      0   100%</span>
-<span class="go">app/api/v1/root.py           11      0   100%</span>
-<span class="go">app/api/v1/user.py           74      7    91%</span>
-<span class="go">app/config.py                36      3    92%</span>
-<span class="go">app/db/__init__.py            0      0   100%</span>
-<span class="go">app/db/connection.py          9      0   100%</span>
-<span class="go">app/db/models.py             85      0   100%</span>
-<span class="go">app/db/queries.py             4      0   100%</span>
-<span class="go">app/schema/user.py           14      0   100%</span>
-<span class="go">---------------------------------------------</span>
-<span class="go">TOTAL                       328     15    95%</span>
-
-
-<span class="go">============================== 14 passed in 1.82s ==============================</span>
 </code></pre></div>
 <h2 id="quality-checks"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg></span> Quality checks</h2>
 <p>To ensure a high level of code quality, I am using <a href="https://mypy.readthedocs.io/en/stable/">mypy</a>, <a href="https://astral.sh/ruff">ruff</a>,
