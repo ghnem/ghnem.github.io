@@ -326,6 +326,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#generating-sdks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating SDKs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cicd" class="md-nav__link">
     <span class="md-ellipsis">
       CI/CD
@@ -498,6 +507,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#generating-sdks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating SDKs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cicd" class="md-nav__link">
     <span class="md-ellipsis">
       CI/CD
@@ -523,28 +541,33 @@
 
 <h1 id="development">Development</h1>
 <h2 id="environment-setup">Environment setup</h2>
-<h3 id="devcontainer-recommended">DevContainer (recommended)</h3>
+<h3 id="devcontainer-recommended"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.954 17H2.75A1.75 1.75 0 0 1 1 15.25V3.75C1 2.784 1.784 2 2.75 2h18.5c.966 0 1.75.784 1.75 1.75v11.5A1.75 1.75 0 0 1 21.25 17h-6.204c.171 1.375.805 2.652 1.769 3.757A.752.752 0 0 1 16.25 22h-8.5a.75.75 0 0 1-.565-1.243c.964-1.105 1.598-2.382 1.769-3.757M21.5 3.75a.25.25 0 0 0-.25-.25H2.75a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h18.5a.25.25 0 0 0 .25-.25ZM13.537 17h-3.074c-.126 1.266-.564 2.445-1.223 3.5h5.52c-.659-1.055-1.098-2.234-1.223-3.5"/></svg></span> DevContainer (recommended)</h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>The project is built on top of <a href="https://code.visualstudio.com/docs/devcontainers/create-dev-container">DevContainer</a>, for minimal onboarding overhead and optimal productivity.</p>
-<p>The DevContainer have all the tools required for development; vscode extensions (sqlite, redis, pylance, redis, githhub actions, etc..), redis server, and CLIs. Also, it will pick up the right venv and activate it for you.</p>
+<p>The project is built on top of a <a href="https://code.visualstudio.com/docs/devcontainers/create-dev-container">DevContainer</a>,
+for minimal onboarding overhead and optimal productivity.</p>
+<p>The DevContainer has all the tools required for development; vscode extensions (sqlite, redis, pylance, redis, githhub actions, etc..),
+redis server, and CLIs for development and SDK generation. Also, it will pick up the right venv and activate it for you.</p>
 </div>
 <ol>
-<li>Install <a href="https://docs.docker.com/get-docker/">Docker</a>, <a href="https://code.visualstudio.com/">Visual Studio Code</a>, and the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a> extension.</li>
+<li>Install <a href="https://docs.docker.com/get-docker/">Docker</a>, <a href="https://code.visualstudio.com/">Visual Studio Code</a>,
+and the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a> extension.</li>
 <li>Open the repository in Visual Studio Code.</li>
-<li>The DevContainers extension will prompt you to reopen the project in a container. If it doesn't, in the command palette <code>(ctrl + shift + p)</code>, search for <code>DevContainer: Reopen in Container</code>.</li>
+<li>The DevContainers extension will prompt you to reopen the project in a container. If it doesn't, in 
+the command palette <code>(ctrl + shift + p)</code>, search for <code>DevContainer: Reopen in Container</code>.</li>
 <li>The project will build the container and install all dependencies. This may take a few minutes.</li>
 </ol>
 <p>Profit! <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.322.75h1.176a1.75 1.75 0 0 1 1.75 1.749v1.177a10.75 10.75 0 0 1-2.925 7.374l-1.228 1.304a24 24 0 0 1-1.596 1.542v5.038c0 .615-.323 1.184-.85 1.5l-4.514 2.709a.75.75 0 0 1-1.12-.488l-.963-4.572a1.3 1.3 0 0 1-.14-.129L8.04 15.96l-1.994-1.873a1.3 1.3 0 0 1-.129-.14l-4.571-.963a.75.75 0 0 1-.49-1.12l2.71-4.514c.316-.527.885-.85 1.5-.85h5.037a24 24 0 0 1 1.542-1.594l1.304-1.23A10.75 10.75 0 0 1 20.321.75Zm-6.344 4.018v-.001l-1.304 1.23a22.3 22.3 0 0 0-3.255 3.851l-2.193 3.29 1.859 1.744.034.034 1.743 1.858 3.288-2.192a22.3 22.3 0 0 0 3.854-3.257l1.228-1.303a9.25 9.25 0 0 0 2.517-6.346V2.5a.25.25 0 0 0-.25-.25h-1.177a9.25 9.25 0 0 0-6.344 2.518M6.5 21c-1.209 1.209-3.901 1.445-4.743 1.49a.24.24 0 0 1-.18-.067.24.24 0 0 1-.067-.18c.045-.842.281-3.534 1.49-4.743.9-.9 2.6-.9 3.5 0s.9 2.6 0 3.5m-.592-8.588L8.17 9.017q.346-.519.717-1.017H5.066a.25.25 0 0 0-.214.121l-2.167 3.612ZM16 15.112q-.5.372-1.018.718l-3.393 2.262.678 3.223 3.612-2.167a.25.25 0 0 0 .121-.214ZM17.5 8a1.5 1.5 0 1 1-3.001-.001A1.5 1.5 0 0 1 17.5 8"/></svg></span> You have a fully fledged development environment ready to go.</p>
-<h3 id="local-setup">Local setup</h3>
+<h3 id="local-setup"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 4.75C2 3.784 2.784 3 3.75 3h4.971c.58 0 1.12.286 1.447.765l1.404 2.063c.046.069.124.11.207.11h8.471c.966 0 1.75.783 1.75 1.75V19.25A1.75 1.75 0 0 1 20.25 21H3.75A1.75 1.75 0 0 1 2 19.25Z"/></svg></span> Local setup</h3>
 <p>If you prefer not to use DevContainer, you can set up the project locally.</p>
 <ol>
-<li>Install <a href="https://docs.astral.sh/uv/#getting-started">astral/uv</a></li>
+<li>Install <a href="https://docs.astral.sh/uv/#getting-started">astral/uv</a>.</li>
 <li>Run <code>uv sync</code> It will create a virtual environment with the version specified in the <code>.python-version</code> file.</li>
 <li>Activate the virtual environment <code>source .venv/bin/activate</code>.</li>
 <li>Run a redis server on <code>localhost:6379</code>.</li>
 <li>Copy <code>.env.example</code> to <code>.env</code> and fill in the required environment variables.</li>
-<li>Install graphviz for generating docs <code>sudo apt-get install graphviz libgraphviz-dev</code> (optional).</li>
+<li>(Optional) install graphviz for generating docs <code>sudo apt-get install graphviz libgraphviz-dev</code>.</li>
+<li>(Optional) install the <a href="https://openapi-generator.tech/docs/installation">OpenAPI Generator</a> and Java if you want to generate SDKs.</li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -553,10 +576,12 @@ DevContainer will activate the virtual environment for you (if doesn't reload ru
 <p>If don't want to activate the virtual environment, you can prefix the commands with <code>uv run</code>, e.g., <code>uv run poe dev</code>.    </p>
 </div>
 <h2 id="task-runner"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.4 3.419a.639.639 0 0 1 1.2 0l.61 1.668a9.59 9.59 0 0 0 5.703 5.703l1.668.61a.639.639 0 0 1 0 1.2l-1.668.61a9.59 9.59 0 0 0-5.703 5.703l-.61 1.668a.639.639 0 0 1-1.2 0l-.61-1.668a9.59 9.59 0 0 0-5.703-5.703l-1.668-.61a.639.639 0 0 1 0-1.2l1.668-.61a9.59 9.59 0 0 0 5.703-5.703zM8 16.675a.266.266 0 0 1 .5 0l.254.694a4 4 0 0 0 2.376 2.377l.695.254a.266.266 0 0 1 0 .5l-.695.254a4 4 0 0 0-2.376 2.377l-.254.694a.266.266 0 0 1-.5 0l-.254-.694a4 4 0 0 0-2.376-2.377l-.695-.254a.266.266 0 0 1 0-.5l.695-.254a4 4 0 0 0 2.376-2.377zM4.2.21a.32.32 0 0 1 .6 0l.305.833a4.8 4.8 0 0 0 2.852 2.852l.833.305a.32.32 0 0 1 0 .6l-.833.305a4.8 4.8 0 0 0-2.852 2.852L4.8 8.79a.32.32 0 0 1-.6 0l-.305-.833a4.8 4.8 0 0 0-2.852-2.852L.21 4.8a.32.32 0 0 1 0-.6l.833-.305a4.8 4.8 0 0 0 2.852-2.852z"/></svg></span> Task runner</h2>
-<p>I am using <a href="https://poethepoet.natn.io/index.html">poethepoet</a> to ease the development workflow. Tasks are defined in the <code>pyproject.toml</code> file.</p>
+<p>I am using <a href="https://poethepoet.natn.io/index.html">poethepoet</a> to ease the development workflow. 
+Tasks are defined in the <code>pyproject.toml</code> file.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>You don't need the <code>--no-ansi</code> flag if you are running the commands in a normal terminal.</p>
+<p>You don't need the <code>--no-ansi</code> flag if you are running the commands in a normal terminal. 
+The flag is used to remove the ANSI as the docs gets generated in CI.</p>
 </div>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>poe<span class="w"> </span>--help<span class="w"> </span>--no-ansi
 <span class="go">Poe the Poet - A task runner that works well with poetry.</span>
@@ -584,6 +609,8 @@ DevContainer will activate the virtual environment for you (if doesn't reload ru
 <span class="go">  pyright               Run pyright type checker</span>
 <span class="go">  lint                  Lint the projec with ruff</span>
 <span class="go">  fmt                   Format the project with isort and black</span>
+<span class="go">  sdk                   Generate the SDK from the swagger documentation</span>
+<span class="go">    --lang              The language to generate the SDK for</span>
 <span class="go">  create_admin          Create a new admin user</span>
 <span class="go">    --first-name       </span>
 <span class="go">    --last-name        </span>
@@ -673,13 +700,82 @@ Config<span class="o">(</span><span class="nv">db_url</span><span class="o">=</s
 <span class="go">TOTAL                       319     14    96%</span>
 
 
-<span class="go">============================== 14 passed in 1.90s ==============================</span>
+<span class="go">============================== 14 passed in 1.93s ==============================</span>
 </code></pre></div>
 <h2 id="quality-checks"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg></span> Quality checks</h2>
-<p>To ensure a high level of code quality, I am using <a href="https://mypy.readthedocs.io/en/stable/">mypy</a>, <a href="https://astral.sh/ruff">ruff</a></p>
+<p>To ensure a high level of code quality, I am using <a href="https://mypy.readthedocs.io/en/stable/">mypy</a>, <a href="https://astral.sh/ruff">ruff</a>,
+<a href="https://black.readthedocs.io/en/stable/">black</a>, and <a href="https://pycqa.github.io/isort/">isort</a>.</p>
 <p>Fixable formatting and linting issues can be fixed by passing the <code>--fix</code> flag to the <code>poe fmt</code> and <code>poe lint</code> commands.</p>
 <div class="highlight"><pre><span></span><code>poe<span class="w"> </span>fmt<span class="w"> </span>--fix
 poe<span class="w"> </span>lint<span class="w"> </span>--fix
+</code></pre></div>
+<h2 id="generating-sdks"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.126.64a1.75 1.75 0 0 1 1.75 0l8.25 4.762q.155.09.286.206a.75.75 0 0 1 .554.96q.035.17.035.35v3.332a.75.75 0 0 1-1.5 0V7.64l-7.75 4.474V22.36a.75.75 0 0 1-1.125.65l-8.75-5.052a1.75 1.75 0 0 1-.875-1.515V6.917q0-.179.035-.35a.75.75 0 0 1 .554-.96q.133-.117.286-.205zm.875 10.173zl7.75-4.474-7.625-4.402a.25.25 0 0 0-.25 0L2.251 6.34Zm-8.5-3.175v8.803c0 .09.048.172.125.216l7.625 4.402v-8.947Z"/><path d="m21.347 17.5-2.894-2.702a.75.75 0 1 1 1.023-1.096l4.286 4a.75.75 0 0 1 0 1.096l-4.286 4a.75.75 0 1 1-1.023-1.096L21.347 19h-6.633a.75.75 0 0 1 0-1.5z"/></svg></span> Generating SDKs</h2>
+<p>To consume the API in other languages, you can generate SDKs using the OpenAPI Generator.
+For example, to generate a Kotlin SDK, you can run the following command.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>poe<span class="w"> </span>sdk<span class="w"> </span>--lang<span class="w"> </span>kotlin
+<span class="go">[37mPoe =&gt;[0m [94mopenapi-generator-cli generate -i docs/swagger.json -g kotlin -o sdk/kotlin[0m</span>
+<span class="go">[main] INFO  o.o.codegen.DefaultGenerator - Generating with dryRun=false</span>
+<span class="go">[main] INFO  o.o.c.ignore.CodegenIgnoreProcessor - Output directory (/home/runner/work/alfa/alfa/sdk/kotlin) does not exist, or is inaccessible. No file (.openapi-generator-ignore) will be evaluated.</span>
+<span class="go">[main] INFO  o.o.codegen.DefaultGenerator - OpenAPI Generator: kotlin (client)</span>
+<span class="go">[main] INFO  o.o.codegen.DefaultGenerator - Generator &#39;kotlin&#39; is considered stable.</span>
+<span class="go">[main] INFO  o.o.c.l.AbstractKotlinCodegen - Environment variable KOTLIN_POST_PROCESS_FILE not defined so the Kotlin code may not be properly formatted. To define it, try &#39;export KOTLIN_POST_PROCESS_FILE=&quot;/usr/local/bin/ktlint -F&quot;&#39; (Linux/Mac)</span>
+<span class="go">[main] INFO  o.o.c.l.AbstractKotlinCodegen - NOTE: To enable file post-processing, &#39;enablePostProcessFile&#39; must be set to `true` (--enable-post-process-file for CLI).</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/models/LoginUserRequest.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/test/kotlin/org/openapitools/client/models/LoginUserRequestTest.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/docs/LoginUserRequest.md</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/models/RegisterUserError.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/test/kotlin/org/openapitools/client/models/RegisterUserErrorTest.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/docs/RegisterUserError.md</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/models/RegisterUserRequest.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/test/kotlin/org/openapitools/client/models/RegisterUserRequestTest.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/docs/RegisterUserRequest.md</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/models/RegisterUserResponse.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/test/kotlin/org/openapitools/client/models/RegisterUserResponseTest.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/docs/RegisterUserResponse.md</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/apis/ProtectedApi.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/test/kotlin/org/openapitools/client/apis/ProtectedApiTest.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/docs/ProtectedApi.md</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/apis/PublicApi.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/test/kotlin/org/openapitools/client/apis/PublicApiTest.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/docs/PublicApi.md</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/apis/UsersApi.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/test/kotlin/org/openapitools/client/apis/UsersApiTest.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/docs/UsersApi.md</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/README.md</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/build.gradle</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/settings.gradle</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/gradlew</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/gradlew.bat</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/gradle/wrapper/gradle-wrapper.properties</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/gradle/wrapper/gradle-wrapper.jar</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/infrastructure/ApiClient.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/infrastructure/ApiAbstractions.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/infrastructure/PartConfig.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/infrastructure/RequestConfig.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/infrastructure/RequestMethod.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/infrastructure/Serializer.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/infrastructure/ByteArrayAdapter.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/infrastructure/UUIDAdapter.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/infrastructure/LocalDateAdapter.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/infrastructure/LocalDateTimeAdapter.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/infrastructure/OffsetDateTimeAdapter.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/infrastructure/BigDecimalAdapter.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/infrastructure/BigIntegerAdapter.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/infrastructure/URIAdapter.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/infrastructure/Errors.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/infrastructure/ResponseExtensions.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/src/main/kotlin/org/openapitools/client/infrastructure/ApiResponse.kt</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/.openapi-generator-ignore</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/.openapi-generator/VERSION</span>
+<span class="go">[main] INFO  o.o.codegen.TemplateManager - writing file /home/runner/work/alfa/alfa/sdk/kotlin/.openapi-generator/FILES</span>
+<span class="gp">#</span><span class="c1">###############################################################################</span>
+<span class="gp"># </span>Thanks<span class="w"> </span><span class="k">for</span><span class="w"> </span>using<span class="w"> </span>OpenAPI<span class="w"> </span>Generator.<span class="w">                                          </span><span class="c1">#</span>
+<span class="gp"># </span>Please<span class="w"> </span>consider<span class="w"> </span>donation<span class="w"> </span>to<span class="w"> </span><span class="nb">help</span><span class="w"> </span>us<span class="w"> </span>maintain<span class="w"> </span>this<span class="w"> </span>project<span class="w"> </span>🙏<span class="w">                 </span><span class="c1">#</span>
+<span class="gp"># </span>https://opencollective.com/openapi_generator/donate<span class="w">                          </span><span class="c1">#</span>
+<span class="gp">#                                                                              </span><span class="c1">#</span>
+<span class="gp"># </span>This<span class="w"> </span>generator<span class="err">&#39;</span>s<span class="w"> </span>contributed<span class="w"> </span>by<span class="w"> </span>Jim<span class="w"> </span>Schubert<span class="w"> </span><span class="o">(</span>https://github.com/jimschubert<span class="o">)</span><span class="c1">#</span>
+<span class="gp"># </span>Please<span class="w"> </span>support<span class="w"> </span>his<span class="w"> </span>work<span class="w"> </span>directly<span class="w"> </span>via<span class="w"> </span>https://patreon.com/jimschubert<span class="w"> </span>🙏<span class="w">      </span><span class="c1">#</span>
+<span class="gp">#</span><span class="c1">###############################################################################</span>
 </code></pre></div>
 <h2 id="cicd"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1 3a2 2 0 0 1 2-2h6.5a2 2 0 0 1 2 2v6.5a2 2 0 0 1-2 2H7v4.063C7 16.355 7.644 17 8.438 17H12.5v-2.5a2 2 0 0 1 2-2H21a2 2 0 0 1 2 2V21a2 2 0 0 1-2 2h-6.5a2 2 0 0 1-2-2v-2.5H8.437A2.94 2.94 0 0 1 5.5 15.562V11.5H3a2 2 0 0 1-2-2Zm2-.5a.5.5 0 0 0-.5.5v6.5a.5.5 0 0 0 .5.5h6.5a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5ZM14.5 14a.5.5 0 0 0-.5.5V21a.5.5 0 0 0 .5.5H21a.5.5 0 0 0 .5-.5v-6.5a.5.5 0 0 0-.5-.5Z"/></svg></span> CI/CD</h2>
 <p>I am using GitHub Actions are used for CI/CD. The workflow is defined in <code>.github/workflows</code> directory.</p>
