@@ -15,7 +15,7 @@
         <link rel="next" href="../swagger/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
@@ -43,11 +43,39 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Devlopment - Alfa Care" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="./assets/images/social/development.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="None" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Devlopment - Alfa Care" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="./assets/images/social/development.png" >
+      
     
     
   </head>
@@ -80,8 +108,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Alfa Care" class="md-header__button md-logo" aria-label="Alfa Care" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../assets/logo.webp" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -175,8 +202,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Alfa Care" class="md-nav__button md-logo" aria-label="Alfa Care" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../assets/logo.webp" alt="logo">
 
     </a>
     Alfa Care
@@ -565,7 +591,8 @@
 <p>The project is built on top of a <a href="https://code.visualstudio.com/docs/devcontainers/create-dev-container">DevContainer</a>,
 for minimal onboarding overhead and optimal productivity.</p>
 <p>The DevContainer has all the tools required for development; vscode extensions (sqlite, redis, pylance, redis, githhub actions, etc..),
-redis server, and CLIs for development and SDK generation. Also, it will pick up the right venv and activate it for you.</p>
+redis server, and CLIs for development and SDK generation. Also, it will pick up the right venv and activate it for you and 
+install <code>poe</code> tab completions.</p>
 </div>
 <ol>
 <li>Install <a href="https://docs.docker.com/get-docker/">Docker</a>, <a href="https://code.visualstudio.com/">Visual Studio Code</a>,
@@ -586,6 +613,8 @@ redis server, and CLIs for development and SDK generation. Also, it will pick up
 <li>Copy <code>.env.example</code> to <code>.env</code> and fill in the required environment variables.</li>
 <li>(Optional) install graphviz for generating docs <code>sudo apt-get install graphviz libgraphviz-dev</code>.</li>
 <li>(Optional) install the <a href="https://openapi-generator.tech/docs/installation">OpenAPI Generator</a> and Java if you want to generate SDKs.</li>
+<li>(Optional) install <code>webp</code> to optimize docs assets. <code>sudo apt-get install webp</code>.</li>
+<li>(Optional) enable <code>poe</code> completions, see <a href="https://poethepoet.natn.io/installation.html#enable-tab-completion-for-your-shell">poe's docs</a>.</li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -639,6 +668,7 @@ The flag is used to remove the ANSI as the docs gets generated in CI.</p>
 <span class="go">    --path              The path to export the swagger documentation to [default: docs/swagger.json]</span>
 <span class="go">  erd                   Export the ERD documentation to a file</span>
 <span class="go">    --path              The path to export the ERD documentation to [default: docs/erd.md]</span>
+<span class="go">  docs-optimize-assets  </span>
 </code></pre></div>
 <h2 id="running-flask-dev-server"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 15.584V8.416a.5.5 0 0 1 .77-.42l5.576 3.583a.5.5 0 0 1 0 .842l-5.576 3.584a.5.5 0 0 1-.77-.42Z"/><path d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12m11-9.5A9.5 9.5 0 0 0 2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5"/></svg></span> Running flask dev server</h2>
 <p>To run the server, you can use the <code>poe</code> task runner.</p>
@@ -719,7 +749,7 @@ Config<span class="o">(</span><span class="nv">db_url</span><span class="o">=</s
 <span class="go">TOTAL                       328     15    95%</span>
 
 
-<span class="go">============================== 14 passed in 1.79s ==============================</span>
+<span class="go">============================== 14 passed in 1.84s ==============================</span>
 </code></pre></div>
 <h2 id="quality-checks"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg></span> Quality checks</h2>
 <p>To ensure a high level of code quality, I am using <a href="https://mypy.readthedocs.io/en/stable/">mypy</a>, <a href="https://astral.sh/ruff">ruff</a>,
@@ -801,24 +831,24 @@ For example, to generate a <code>Kotlin</code> SDK, you can run the following co
 <ul>
 <li>
 <p><code>ci.yml</code> has 3 jobs</p>
-</li>
-<li>
-<p><code>check</code>runs the tests, linting, formatting checks.</p>
-</li>
+<ul>
+<li><code>check</code>runs the tests, linting, formatting checks.</li>
 <li><code>integration</code> makes sure the swagger documentation is up to date.</li>
-<li>
-<p><code>docs</code> publishes the documentation to GitHub pages.</p>
+<li><code>docs</code> publishes the documentation to GitHub pages.</li>
+</ul>
 </li>
 <li>
 <p><code>security.yml</code> has a single job</p>
-</li>
-<li>
-<p><code>audit</code> checks for security vulnerabilities in code.</p>
+<ul>
+<li><code>audit</code> checks for security vulnerabilities in code.</li>
+</ul>
 </li>
 <li>
 <p><code>docker.yml</code> has a single job</p>
-</li>
+<ul>
 <li><code>build</code> builds the docker image and pushes it to the GitHub Container Registry.</li>
+</ul>
+</li>
 </ul>
 <h2 id="production-ish-build">Production-ish build</h2>
 <p>The <code>Dockerfile</code> defines a production-ish build. It uses the published image from the GitHub Container Registry and PostgreSQL instead of SQLite. </p>
@@ -831,6 +861,9 @@ For example, to generate a <code>Kotlin</code> SDK, you can run the following co
 
 
 
+
+  
+  
 
 
 
