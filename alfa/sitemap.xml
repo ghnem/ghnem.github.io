@@ -1,3 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://demos.abdulrhmnghanem.tech/alfa/</loc>
+         <lastmod>2025-01-18</lastmod>
+    </url>
+    <url>
+         <loc>https://demos.abdulrhmnghanem.tech/alfa/development/</loc>
+         <lastmod>2025-01-18</lastmod>
+    </url>
+    <url>
+         <loc>https://demos.abdulrhmnghanem.tech/alfa/erd/</loc>
+         <lastmod>2025-01-18</lastmod>
+    </url>
+    <url>
+         <loc>https://demos.abdulrhmnghanem.tech/alfa/rationale/</loc>
+         <lastmod>2025-01-18</lastmod>
+    </url>
+    <url>
+         <loc>https://demos.abdulrhmnghanem.tech/alfa/swagger/</loc>
+         <lastmod>2025-01-18</lastmod>
+    </url>
 </urlset>
