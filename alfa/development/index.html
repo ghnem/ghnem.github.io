@@ -562,12 +562,11 @@
 <h3 id="devcontainer-recommended"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.954 17H2.75A1.75 1.75 0 0 1 1 15.25V3.75C1 2.784 1.784 2 2.75 2h18.5c.966 0 1.75.784 1.75 1.75v11.5A1.75 1.75 0 0 1 21.25 17h-6.204c.171 1.375.805 2.652 1.769 3.757A.752.752 0 0 1 16.25 22h-8.5a.75.75 0 0 1-.565-1.243c.964-1.105 1.598-2.382 1.769-3.757M21.5 3.75a.25.25 0 0 0-.25-.25H2.75a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h18.5a.25.25 0 0 0 .25-.25ZM13.537 17h-3.074c-.126 1.266-.564 2.445-1.223 3.5h5.52c-.659-1.055-1.098-2.234-1.223-3.5"/></svg></span> DevContainer (recommended)</h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-</div>
 <p>The project is built on top of a <a href="https://code.visualstudio.com/docs/devcontainers/create-dev-container">DevContainer</a>,
 for minimal onboarding overhead and optimal productivity.</p>
-<div class="highlight"><pre><span></span><code>The DevContainer has all the tools required for development; vscode extensions (sqlite, redis, pylance, redis, githhub actions, etc..),
-redis server, and CLIs for development and SDK generation. Also, it will pick up the right venv and activate it for you.
-</code></pre></div>
+<p>The DevContainer has all the tools required for development; vscode extensions (sqlite, redis, pylance, redis, githhub actions, etc..),
+redis server, and CLIs for development and SDK generation. Also, it will pick up the right venv and activate it for you.</p>
+</div>
 <ol>
 <li>Install <a href="https://docs.docker.com/get-docker/">Docker</a>, <a href="https://code.visualstudio.com/">Visual Studio Code</a>,
    and the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a> extension.</li>
@@ -590,19 +589,18 @@ redis server, and CLIs for development and SDK generation. Also, it will pick up
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-</div>
 <p>All the commands from now on assume you have the virtual environment activated. Opening a new terminal in the
 DevContainer will activate the virtual environment for you (if doesn't reload run <code>reload window</code> from the command pallete).</p>
-<div class="highlight"><pre><span></span><code>If don&#39;t want to activate the virtual environment, you can prefix the commands with `uv run`, e.g., `uv run poe dev`.
-</code></pre></div>
+<p>If don't want to activate the virtual environment, you can prefix the commands with <code>uv run</code>, e.g., <code>uv run poe dev</code>.</p>
+</div>
 <h2 id="task-runner"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.4 3.419a.639.639 0 0 1 1.2 0l.61 1.668a9.59 9.59 0 0 0 5.703 5.703l1.668.61a.639.639 0 0 1 0 1.2l-1.668.61a9.59 9.59 0 0 0-5.703 5.703l-.61 1.668a.639.639 0 0 1-1.2 0l-.61-1.668a9.59 9.59 0 0 0-5.703-5.703l-1.668-.61a.639.639 0 0 1 0-1.2l1.668-.61a9.59 9.59 0 0 0 5.703-5.703zM8 16.675a.266.266 0 0 1 .5 0l.254.694a4 4 0 0 0 2.376 2.377l.695.254a.266.266 0 0 1 0 .5l-.695.254a4 4 0 0 0-2.376 2.377l-.254.694a.266.266 0 0 1-.5 0l-.254-.694a4 4 0 0 0-2.376-2.377l-.695-.254a.266.266 0 0 1 0-.5l.695-.254a4 4 0 0 0 2.376-2.377zM4.2.21a.32.32 0 0 1 .6 0l.305.833a4.8 4.8 0 0 0 2.852 2.852l.833.305a.32.32 0 0 1 0 .6l-.833.305a4.8 4.8 0 0 0-2.852 2.852L4.8 8.79a.32.32 0 0 1-.6 0l-.305-.833a4.8 4.8 0 0 0-2.852-2.852L.21 4.8a.32.32 0 0 1 0-.6l.833-.305a4.8 4.8 0 0 0 2.852-2.852z"/></svg></span> Task runner</h2>
 <p>I am using <a href="https://poethepoet.natn.io/index.html">poethepoet</a> to ease the development workflow.
 Tasks are defined in the <code>pyproject.toml</code> file.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-</div>
 <p>You don't need the <code>--no-ansi</code> flag if you are running the commands in a normal terminal.
 The flag is used to remove the ANSI as the docs gets generated in CI.</p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>poe<span class="w"> </span>--help<span class="w"> </span>--no-ansi
 <span class="go">Poe the Poet - A task runner that works well with poetry.</span>
 <span class="go">version 0.32.1</span>
@@ -721,7 +719,7 @@ Config<span class="o">(</span><span class="nv">db_url</span><span class="o">=</s
 <span class="go">TOTAL                       328     15    95%</span>
 
 
-<span class="go">============================== 14 passed in 1.97s ==============================</span>
+<span class="go">============================== 14 passed in 1.81s ==============================</span>
 </code></pre></div>
 <h2 id="quality-checks"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg></span> Quality checks</h2>
 <p>To ensure a high level of code quality, I am using <a href="https://mypy.readthedocs.io/en/stable/">mypy</a>, <a href="https://astral.sh/ruff">ruff</a>,
@@ -732,7 +730,7 @@ poe<span class="w"> </span>lint<span class="w"> </span>--fix
 </code></pre></div>
 <h2 id="generating-sdks"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.126.64a1.75 1.75 0 0 1 1.75 0l8.25 4.762q.155.09.286.206a.75.75 0 0 1 .554.96q.035.17.035.35v3.332a.75.75 0 0 1-1.5 0V7.64l-7.75 4.474V22.36a.75.75 0 0 1-1.125.65l-8.75-5.052a1.75 1.75 0 0 1-.875-1.515V6.917q0-.179.035-.35a.75.75 0 0 1 .554-.96q.133-.117.286-.205zm.875 10.173zl7.75-4.474-7.625-4.402a.25.25 0 0 0-.25 0L2.251 6.34Zm-8.5-3.175v8.803c0 .09.048.172.125.216l7.625 4.402v-8.947Z"/><path d="m21.347 17.5-2.894-2.702a.75.75 0 1 1 1.023-1.096l4.286 4a.75.75 0 0 1 0 1.096l-4.286 4a.75.75 0 1 1-1.023-1.096L21.347 19h-6.633a.75.75 0 0 1 0-1.5z"/></svg></span> Generating SDKs</h2>
 <p>To consume the API in other languages, you can generate SDKs using the OpenAPI Generator.
-For example, to generate a Kotlin SDK, you can run the following command.</p>
+For example, to generate a <code>Kotlin</code> SDK, you can run the following command.</p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>poe<span class="w"> </span>sdk<span class="w"> </span>--lang<span class="w"> </span>kotlin
 <span class="go">[37mPoe =&gt;[0m [94mopenapi-generator-cli generate -i docs/swagger.json -g kotlin -o sdk/kotlin[0m</span>
 <span class="go">[main] INFO  o.o.codegen.DefaultGenerator - Generating with dryRun=false</span>
@@ -799,7 +797,7 @@ For example, to generate a Kotlin SDK, you can run the following command.</p>
 <span class="gp">#</span><span class="c1">###############################################################################</span>
 </code></pre></div>
 <h2 id="cicd"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1 3a2 2 0 0 1 2-2h6.5a2 2 0 0 1 2 2v6.5a2 2 0 0 1-2 2H7v4.063C7 16.355 7.644 17 8.438 17H12.5v-2.5a2 2 0 0 1 2-2H21a2 2 0 0 1 2 2V21a2 2 0 0 1-2 2h-6.5a2 2 0 0 1-2-2v-2.5H8.437A2.94 2.94 0 0 1 5.5 15.562V11.5H3a2 2 0 0 1-2-2Zm2-.5a.5.5 0 0 0-.5.5v6.5a.5.5 0 0 0 .5.5h6.5a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5ZM14.5 14a.5.5 0 0 0-.5.5V21a.5.5 0 0 0 .5.5H21a.5.5 0 0 0 .5-.5v-6.5a.5.5 0 0 0-.5-.5Z"/></svg></span> CI/CD</h2>
-<p>I am using GitHub Actions are used for CI/CD. The workflow is defined in <code>.github/workflows</code> directory.</p>
+<p>I am using GitHub Actions for CI/CD. The workflow is defined in <code>.github/workflows</code> directory.</p>
 <ul>
 <li>
 <p><code>ci.yml</code> has 3 jobs</p>
@@ -814,10 +812,19 @@ For example, to generate a Kotlin SDK, you can run the following command.</p>
 <li>
 <p><code>security.yml</code> has a single job</p>
 </li>
-<li><code>audit</code> checks for security vulnerabilities in code.</li>
+<li>
+<p><code>audit</code> checks for security vulnerabilities in code.</p>
+</li>
+<li>
+<p><code>docker.yml</code> has a single job</p>
+</li>
+<li><code>build</code> builds the docker image and pushes it to the GitHub Container Registry.</li>
 </ul>
 <h2 id="production-ish-build">Production-ish build</h2>
-<p>The <code>Dockerfile</code> defines a production-ish build. It uses gunicon to serve the app. To try it, run <code>docker compose up</code>.</p>
+<p>The <code>Dockerfile</code> defines a production-ish build. It uses the published image from the GitHub Container Registry and PostgreSQL instead of SQLite. </p>
+<p>The published image uses gunicon to serve the app and only installs the production dependencies. To try it, run</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up
+</code></pre></div>
 
 
 
