@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/users/login": {
+    "/user/login": {
       "post": {
         "responses": {
           "200": {
@@ -116,11 +116,11 @@
           }
         ],
         "tags": [
-          "users"
+          "user"
         ]
       }
     },
-    "/users/register": {
+    "/user/register": {
       "post": {
         "responses": {
           "201": {
@@ -163,7 +163,7 @@
           }
         ],
         "tags": [
-          "users"
+          "user"
         ]
       }
     }
@@ -186,7 +186,7 @@
   ],
   "tags": [
     {
-      "name": "users",
+      "name": "user",
       "description": "User operations"
     },
     {
